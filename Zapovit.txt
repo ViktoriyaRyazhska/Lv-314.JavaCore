@@ -43,16 +43,14 @@
 В сем’ї вольній, новій,
 Не забудьте пом’янути
 Незлим тихим словом.
-100. Lviv Malakhov Dmytro
-100. Lviv Malakhov Dmytro
-100. Lviv Malakho
-100. Lviv Malakhov Dmytro
-100. Lviv Malakhov Dmytro
-3.0f6854ea805268827261e369b247f795a54fd7f4
 444.test_2
+
 777.Кто видале, зробимо тьомну після пари =)
+<<<<<<< HEAD
 100. Lviv Malakhov Dmytro
 100. Lviv Malakhov Dmytro
 100. Lviv Malakho
 100. 810b691a61c6ddfd0f6612ce8325298e8d9b86d3
+=======
+>>>>>>> 9acc489e9e73bd52c24d3ca2e1bb7db313758cc7
 
