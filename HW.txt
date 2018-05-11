@@ -8,4 +8,6 @@ Yurii Tereshko
 Yaroslav Schurko           
 Vytalyi Chubryn       +           
 Petro Il'kiv               
-Bohdan Bondar             
+Bohdan Bondar  
+Pavel Kolominov
+Oleg Kovaliuk
