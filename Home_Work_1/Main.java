@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-																						// 1
+								 //1														// 1
 /*
   
 		System.out.println("Radius:");
@@ -15,7 +15,7 @@ public class Main {
 	
 	*/
 			
-		/*																					//2
+		/*							//2														//2
 		System.out.println("Who are you ?");
 		Scanner scan_2= new Scanner(System.in);
 		String name=scan_2.nextLine();
@@ -24,7 +24,7 @@ public class Main {
 		System.out.println("You name is "+name+", and you live in "+live);
 		*/
 		
-																							//3
+										//3													//3
 		Scanner scan_3= new Scanner(System.in);
 		System.out.println("Price of minute for 1 country");
 		double price_1=scan_3.nextDouble();
