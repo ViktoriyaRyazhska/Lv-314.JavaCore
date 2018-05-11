@@ -22,6 +22,8 @@
 hs_err_pid*
 
 .idea/
-./out/
-./*.iml
-./*.mf
+**/*.iml
+**/*.mf
+
+
+
