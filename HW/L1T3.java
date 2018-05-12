@@ -13,17 +13,7 @@ public class L1T3 {
 	double 	m2= Integer.parseInt(minute.readLine())*tarif;
 	System.out.println("#3:");
 	double 	m3= Integer.parseInt(minute.readLine())*tarif;
-	System.out.println("Pay for call#1:" + m1 + " #2:" + m2 + " #3:" + m3 + " All calls summary:" + (m1+m2+m3));
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
+	System.out.println("Pay for call#1:" + m1 + " #2:" + m2 + " #3:" + m3 + " All calls summary:" + (m1+m2+m3));	
 	}
 	}
 
