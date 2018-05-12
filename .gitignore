@@ -23,5 +23,5 @@ hs_err_pid*
 
 Zapovit.txt
 
-
-!*.java
+*
+!/src/*
