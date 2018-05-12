@@ -25,4 +25,3 @@ Zapovit.txt
 *.prefs
 .classpath
 .project
-!src/
