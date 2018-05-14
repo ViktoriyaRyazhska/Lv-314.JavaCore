@@ -10,4 +10,4 @@ Vytalyi Chubryn       +
 Petro Il'kiv          +               
 Bohdan Bondar         +  
 Pavel Kolominov
-Oleg Kovaliuk
+Oleg Kovaliuk 	     add   
