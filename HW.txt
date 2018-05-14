@@ -2,12 +2,12 @@
 Dmytro Malakhov       +           
 Oleh Fedynchuk            
 Stanislav Zhuravel'       
-Vitalii Dzen'              
+Vitalii Dzen'         .              
 Taras Luchak          +     
 Yurii Tereshko        +    
 Yaroslav Schurko           
 Vytalyi Chubryn       +           
-Petro Il'kiv               
-Bohdan Bondar  
+Petro Il'kiv          +               
+Bohdan Bondar         +  
 Pavel Kolominov
 Oleg Kovaliuk
