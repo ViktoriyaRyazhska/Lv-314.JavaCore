@@ -4,7 +4,7 @@ Oleh Fedynchuk
 Stanislav Zhuravel'       
 Vitalii Dzen'              
 Taras Luchak          +     
-Yurii Tereshko             
+Yurii Tereshko        +    
 Yaroslav Schurko           
 Vytalyi Chubryn       +           
 Petro Il'kiv               
