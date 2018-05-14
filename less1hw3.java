@@ -1,5 +1,3 @@
-package ss_lessons;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,8 +18,7 @@ public class less1hw3 {
 			System.out.println("Call-" +t+ " >> Duration: "+call+"min; Cost: "+unitsPerMinute*call +"unit; Total: " + total + "min; Total cost: "+total*unitsPerMinute+"units;");
 			System.out.println("AVG >> duration:"+ avgD+"; Cost:"+total*unitsPerMinute/t);
 			System.out.println("-------------");
-}
-
+		}
 		System.out.println("--- TOTAL ---");
 		System.out.println("Calls: "+(t-1));
 		System.out.println("Minutes: "+total);
