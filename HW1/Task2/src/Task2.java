@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 public class Task2 {
 
 	public static void main(String[] args) throws IOException { 
-	
-		double R, P, S ;
 		
 		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 		System.out.println("What is your name?");
