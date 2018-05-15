@@ -5,21 +5,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
+    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args) throws IOException {
         Perimetr();
         Name();
         Counties();
     }
-
-    public static void Perimetr() throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static void Perimetr() throws IOException{
         float r = Float.parseFloat(br.readLine());
         System.out.println("Perimetr equals" + " " + 2*3.14*r);
         System.out.println("Area equals" + " " + 3.14*r*r);
     }
 
-    public static void Name() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static void Name() throws IOException {
         System.out.println("What is your name?");
         String name = br.readLine();
         System.out.println("Where are you live, " + name + "?");
@@ -27,8 +25,7 @@ public class Main {
         System.out.println(name + ", live in " + address);
     }
 
-    public static void Counties() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static void Counties() throws IOException {
         System.out.println("Hello, please, write three counties");
         String countyOne = br.readLine();
         String countyTwo = br.readLine();
@@ -49,3 +46,4 @@ public class Main {
         System.out.println("For " + countyThree + " conversation cost " + costThree);
     }
 }
+
