@@ -1,35 +1,34 @@
 package com.homework;
 
-public class Emploee {
-    public static double getTotalSum() {
-        return totalSum;
-    }
+public class Employee {
 
-    private static double totalSum;
+    private static double totalSum = 0;
     private String name;
     private float rate;
     private double hours;
 
-    public Emploee() {};
+    public Employee() {};
 
-    public Emploee(String name, float rate) {
+    public Employee(String name, float rate) {
         this.name = name;
         this.rate = rate;
     };
-    public Emploee(String name, float rate, double hours) {
+    Employee(String name, float rate, double hours) {
         this.name = name;
         this.rate = rate;
         this.hours = hours;
-    }
+    };
 
     @Override
     public String toString() {
-        return "Emploee{" +
-                "name= '" + name + '\'' +
+        return "Employee (" +
+                "name= " + name +
                 ", rate= " + rate +
                 ", hours= " + hours +
-                '}';
+                ')';
     }
+
+    static double getTotalSum() { return totalSum; }
 
     public String getName() {
         return name;
@@ -55,12 +54,22 @@ public class Emploee {
         this.hours = hours;
     }
 
-    public double Salary(){
+    double Salary(){
         return this.rate * this.hours;
     }
 
-    public double Bonuses() {
-        totalSum += (Salary() * 0.1) + Salary();
-        return totalSum;
+    double Bonuses() {
+        totalSum += Salary() * 0.1 + Salary();
+        return Salary() * 0.1;
     }
+
+//    double Salary(){
+//        totalSum += this.rate * this.hours;
+//        return totalSum;
+//    }
+//
+//    double Bonuses() {
+//        totalSum += Salary() * 0.1;
+//        return totalSum;
+//    }
 }
