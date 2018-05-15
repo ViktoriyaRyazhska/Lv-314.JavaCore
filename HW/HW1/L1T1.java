@@ -5,8 +5,7 @@ import java.io.InputStreamReader;
 public class L1T1 {
 	public static void main(String[] args) throws IOException
 	{
-		//Task 1
-		BufferedReader ent = new BufferedReader(new InputStreamReader(System.in));
+	    BufferedReader ent = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter R:");
 		int a = Integer.parseInt(ent.readLine());
 		double P= (a*2*Math.PI);
