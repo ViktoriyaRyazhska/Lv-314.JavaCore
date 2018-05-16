@@ -47,6 +47,7 @@ public class Employee {
 	}
 	
 	public double Salary () {
+		totalSum += this.rate*this.hours;
 		return (this.rate*this.hours);
 	}
 	
@@ -56,8 +57,8 @@ public class Employee {
 	}
 	
 	public double Bonuses() {
-		totalSum += Salary()*0.1 + Salary();
-		return (Salary()*0.1);
+		totalSum += this.rate*this.hours*0.1;
+		return (this.rate*this.hours*0.1);
 	}
 	
 
