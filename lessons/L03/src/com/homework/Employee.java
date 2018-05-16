@@ -37,6 +37,7 @@ public class Employee {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -66,7 +67,7 @@ public class Employee {
     }
 
     public void descrSalary(){
-        System.out.print("Employee " + this.getName() + " has selary " + this.Salary() + " + has bonuses ");
+        System.out.print("Employee " + this.getName() + " has salary " + this.Salary() + " + has bonuses ");
         System.out.printf("%.2f", this.Salary() * 0.1);
         System.out.println("");
     }

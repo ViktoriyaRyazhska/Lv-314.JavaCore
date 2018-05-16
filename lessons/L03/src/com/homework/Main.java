@@ -3,33 +3,37 @@ package com.homework;
 public class Main {
 
     public static void main(String[] args) {
-        Employee Dima = new Employee("Dima", 1f, 4d);
-        Employee Vova = new Employee("Vova", 1f, 2d);
-        Employee Vika = new Employee("Vika", 1f, 3d);
+        Employee person1 = new Employee("Dima", 1f, 4d);
+        Employee person2 = new Employee("Vova", 1f, 2d);
+        Employee person3 = new Employee("Vika", 1f, 3d);
 
-        Dima.setRate(10);
-        Vova.setRate(10);
-        Vika.setRate(10);
+        person1.setName("Denis");
+        person2.setName("Igor");
+        person3.setName("Ivan");
 
-        Dima.setHours(1);
-        Vova.setHours(2);
-        Vika.setHours(3);
+        person1.setRate(10);
+        person2.setRate(10);
+        person3.setRate(10);
 
-        Dima.Salary();
-        Vova.Salary();
-        Vika.Salary();
+        person1.setHours(1);
+        person2.setHours(2);
+        person3.setHours(3);
 
-        Dima.Bonuses();
-        Vova.Bonuses();
-        Vika.Bonuses();
+        person1.Salary();
+        person2.Salary();
+        person3.Salary();
 
-        System.out.println(Dima);
-        System.out.println(Vova);
-        System.out.println(Vika);
+        person1.Bonuses();
+        person2.Bonuses();
+        person3.Bonuses();
 
-        Dima.descrSalary();
-        Vova.descrSalary();
-        Vika.descrSalary();
+        System.out.println(person1);
+        System.out.println(person2);
+        System.out.println(person3);
+
+        person1.descrSalary();
+        person2.descrSalary();
+        person3.descrSalary();
 
         System.out.print("Total salary of them ");
         System.out.printf("%.2f", Employee.getTotalSum());
