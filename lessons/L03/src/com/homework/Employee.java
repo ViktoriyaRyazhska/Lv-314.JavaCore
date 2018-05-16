@@ -28,7 +28,9 @@ public class Employee {
                 ')';
     }
 
-    static double getTotalSum() { return totalSum; }
+    public static double getTotalSum() {
+        return totalSum;
+    }
 
     public String getName() {
         return name;
@@ -61,6 +63,12 @@ public class Employee {
     double Bonuses() {
         totalSum += Salary() * 0.1 + Salary();
         return Salary() * 0.1;
+    }
+
+    public void descrSalary(){
+        System.out.print("Employee " + this.getName() + " has selary " + this.Salary() + " + has bonuses ");
+        System.out.printf("%.2f", this.Salary() * 0.1);
+        System.out.println("");
     }
 
 //    double Salary(){

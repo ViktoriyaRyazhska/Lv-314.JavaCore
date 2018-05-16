@@ -7,13 +7,17 @@ public class Main {
         Employee Vova = new Employee("Vova", 1f, 2d);
         Employee Vika = new Employee("Vika", 1f, 3d);
 
-        Dima.setRate(2);
-        Vova.setRate(2);
-        Vika.setRate(2);
+        Dima.setRate(10);
+        Vova.setRate(10);
+        Vika.setRate(10);
 
         Dima.setHours(1);
         Vova.setHours(2);
         Vika.setHours(3);
+
+        Dima.Salary();
+        Vova.Salary();
+        Vika.Salary();
 
         Dima.Bonuses();
         Vova.Bonuses();
@@ -23,12 +27,11 @@ public class Main {
         System.out.println(Vova);
         System.out.println(Vika);
 
-        System.out.println("Employee " + Dima.getName() + " has selary " + Dima.Salary() + " + has bonuses " + Dima.Salary() * 0.1);
-        System.out.println("Employee " + Vova.getName() + " has selary " + Vova.Salary() + " + has bonuses " + Vova.Salary() * 0.1);
-        System.out.print("Employee " + Vika.getName() + " has selary " + Vika.Salary() + " + has bonuses ");
-        System.out.printf("%.1f",Vika.Salary() * 0.1);
-        System.out.println("");
+        Dima.descrSalary();
+        Vova.descrSalary();
+        Vika.descrSalary();
 
-        System.out.println("Total price of them " + Employee.getTotalSum());
+        System.out.print("Total salary of them ");
+        System.out.printf("%.2f", Employee.getTotalSum());
     }
 }
