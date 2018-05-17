@@ -21,7 +21,7 @@ public class l1 {
 		System.out.println(name);
 		System.out.println("Where are you live,"+ name +"?");
 		String city =br.readLine();
-		System.out.println(city2);
+		System.out.println(city);
 		
 	}
 
