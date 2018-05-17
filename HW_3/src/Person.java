@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDate;
 
 public class Person {
 	
@@ -30,7 +31,7 @@ public class Person {
 	}
 	
 	public int age() {
-		return (2018 - this.birthYear);
+		return (LocalDate.now().getYear() - this.birthYear);
 	}
 	
 	public void input() throws IOException {
