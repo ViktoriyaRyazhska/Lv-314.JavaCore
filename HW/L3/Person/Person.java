@@ -1,4 +1,5 @@
-import java.util.Calendar;
+import java.time.LocalDate;
+
 
 public class Person {
 	private String name;
@@ -23,10 +24,9 @@ public class Person {
 		this.birthYear = birthYear;
 	}
 	public int age() {
-		Calendar calendar = Calendar.getInstance();
-		return calendar.get(Calendar.YEAR) - this.birthYear;
+		return LocalDate.now().getYear() - this.birthYear;
 	}
-	public void input(String name,int birhYear) {
+	public void input(String name,short birhYear) {
 		this.name = name;
 		this.birthYear = birhYear;
 	}
