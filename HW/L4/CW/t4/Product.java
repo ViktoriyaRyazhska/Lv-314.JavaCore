@@ -38,15 +38,26 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public void compareQuantity(Product product) {
-		if (this.quantity > product.quantity) {
-			System.out.println("The " + this.getName() + " have biggest quantity!");
-		} else if (this.quantity < product.quantity) {
-			System.out.println("The " + product.getName() + " have biggest quantity!");
-		} else {
-			System.out.println("Quantity is the same!");
-		}
+	public static int compareQuantity(Product[] product) {
+		int max = 0, index = 0;
+		for (int i = 0; i < product.length; i++)
+			if (product[i].quantity > max) {
+				max = product[i].quantity;
+				index = i;
+			}
+		return index;
 
 	}
 
+	public static int exspensiveItem(Product[] product) {
+		double max = 0;
+		int index = 0;
+		for (int i = 0; i < product.length; i++)
+			if (product[i].price > max) {
+				max = product[i].price;
+				index = i;
+			}
+		return index;
+
+	}
 }
