@@ -1,7 +1,5 @@
 package home2;
 
-import t4.Product;
-
 /*Ñreate class Dog with fields name, breed, age. 
 Declare enum for field breed. 
 Create 3 instances of type Dog. 
