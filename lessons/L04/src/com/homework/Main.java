@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 //        threeNumbers();
 //        dayOfWeek();
-        nameOfContinent();
+//        nameOfContinent();
     }
     public static void threeNumbers() throws IOException {
         System.out.println("Введи три числа");
@@ -31,57 +31,70 @@ public class Main {
         System.out.println(addOdd);
     }
     public static void dayOfWeek() throws IOException {
-        System.out.println("Введіть номер дня (цифрою)");
+        System.out.println("Введіть номер дня (цифрою):");
         String week = br.readLine();
         switch (week) {
             case "1" :
-                System.out.println("M, Пон, Пон");
+                System.out.println("Monday, Понеділок, Понедельник");
                 break;
             case "2" :
-                System.out.println("T, Вів, Вто");
+                System.out.println("Tuesday, Вівторок, Вторник");
                 break;
             case "3" :
-                System.out.println("W, Сер, Сре");
+                System.out.println("Wednesday, Середа, Среда");
                 break;
             case "4" :
-                System.out.println("TH, Чт, Чет");
+                System.out.println("Thursday, Четвер, Четверг");
                 break;
             case "5" :
-                System.out.println("F, Пя, Пя");
+                System.out.println("Friday, П`ятниця, Пятница");
                 break;
             case "6" :
-                System.out.println("S, Сб, Сб");
+                System.out.println("Saturday, Субота, Суббота");
                 break;
             case "7" :
-                System.out.println("Sund, Неділя, Воскресенье");
+                System.out.println("Sunday, Неділя, Воскресенье");
                 break;
         }
     }
 
-    public enum nameOfContinent(){
-        System.out.println("Введіть назву країн(Армения/Ботсвана)");
-        String countries = br.readLine();
-        switch (countries) {
-            case "Армения" :
-                System.out.println("Азия");
+    public static void nameOfContinent() throws IOException {
+        Continents continent = null;
+
+        switch(br.readLine()) {
+            case "Ukraine" :
+            case "China":
+                continent = Continents.EURASIA;
                 break;
-            case "Ботсвана" :
-                System.out.println("T, Вів, Вто");
+
+            case "Chad" :
+            case "Angola":
+                continent = Continents.AFRICA;
                 break;
-            case "3" :
-                System.out.println("W, Сер, Сре");
+
+            case "Australia" :
+            case "Tonga":
+                continent = Continents.AUSTRALIA;
                 break;
-            case "4" :
-                System.out.println("TH, Чт, Чет");
+
+            case "Canada" :
+            case "USA":
+                continent = Continents.NORTH_AMERICA;
                 break;
-            case "5" :
-                System.out.println("F, Пя, Пя");
+
+            case "Chile" :
+            case "Peru":
+                continent = Continents.SOUTH_AMERICA;
                 break;
-            case "6" :
-                System.out.println("S, Сб, Сб");
+
+            case "Antarctica" :
+                continent = Continents.ANTARCTIDA;
                 break;
-            case "7" :
-                System.out.println("Sund, Неділя, Воскресенье");
+
+            default:
+                System.out.println("This continent does not exist");
                 break;
+        }
+        System.out.println(continent);
     }
 }
