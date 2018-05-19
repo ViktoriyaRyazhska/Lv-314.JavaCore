@@ -1,9 +1,14 @@
 package com.homework;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.time.LocalDate;
+
 public class Person {
+    public BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private String name;
     private int birthYear;
-    private int year = 2018;
 
     public String getName() {
         return name;
@@ -21,14 +26,6 @@ public class Person {
         this.birthYear = birthYear;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
     public Person() { }
 
     public Person(String name, int birthYear) {
@@ -37,7 +34,23 @@ public class Person {
     }
 
     public int age() {
-        return year - this.birthYear;
+        return LocalDate.now().getYear() - this.birthYear;
+    }
+
+    public void input() throws IOException {
+        System.out.println("Введіть ваше ім'я:");
+        setName(br.readLine());
+        System.out.println("Введіть вашу дату народження:");
+        setBirthYear( Integer.parseInt( br.readLine() ) );
+    }
+
+    public String output() {
+        return this.getName() + " is " + this.age() + " years old";
+    }
+
+    public void changeName() throws IOException {
+        System.out.println("Введіть ваше нове ім'я:");
+        setName( br.readLine() );
     }
 
     @Override
@@ -45,7 +58,6 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", birthYear=" + birthYear +
-                ", year=" + year +
                 '}';
     }
 }
