@@ -36,10 +36,7 @@ public class Employee {
         return name;
     }
 
-    public void setName(String name) {
-
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public float getRate() {
         return rate;
@@ -58,27 +55,18 @@ public class Employee {
     }
 
     double Salary(){
+        totalSum += this.rate * this.hours;
         return this.rate * this.hours;
     }
 
     double Bonuses() {
-        totalSum += Salary() * 0.1 + Salary();
-        return Salary() * 0.1;
+        totalSum += this.rate * this.hours * 0.1;
+        return this.rate * this.hours * 0.1;
     }
 
     public void descrSalary(){
-        System.out.print("Employee " + this.getName() + " has salary " + this.Salary() + " + has bonuses ");
-        System.out.printf("%.2f", this.Salary() * 0.1);
+        System.out.print("Employee " + this.getName() + " has salary " + this.rate * this.hours + " + has bonuses ");
+        System.out.printf("%.2f", this.rate * this.hours * 0.1);
         System.out.println("");
     }
-
-//    double Salary(){
-//        totalSum += this.rate * this.hours;
-//        return totalSum;
-//    }
-//
-//    double Bonuses() {
-//        totalSum += Salary() * 0.1;
-//        return totalSum;
-//    }
 }
