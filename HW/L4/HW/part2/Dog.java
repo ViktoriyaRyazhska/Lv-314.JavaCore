@@ -49,12 +49,15 @@ public class Dog {
 	}
 
 	public static boolean compareName(Dog[] dogs) {
-
-		for (int i = 0; i < dogs.length - 1; i++)
-			if (dogs[i].getName().equals(dogs[i + 1].getName())) {
-				return false;
+		boolean flag = true;
+		for (int j = 0; j < dogs.length; j++)
+			for (int i = j; i < dogs.length - 1; i++) {
+				if (dogs[i + 1].getName().equals(dogs[j].getName())) {
+					flag = false;
+				}
 			}
-		return true;
+		return flag;
+
 	}
 
 	public static int oldestDog(Dog[] dogs) {
