@@ -1,13 +1,14 @@
+package H4;
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import H4.Breed;
-import H4.Dog;
 
 public class testDog {
 	
@@ -30,21 +31,21 @@ public class testDog {
 
 	@Test
 	public final void testCompareName() {
-		Dog[] dogs = new Dog[3];
-		dogs[0] = new Dog("Lucy", Breed.BRITTANY, 4);
-		dogs[1] = new Dog("Sirko", Breed.CHOW_CHOW, 2);
-		dogs[2] = new Dog("Wonderdog", Breed.BULLDOG, 7);
+		List<Dog> dogs = new ArrayList<Dog>();
+		dogs.add(new Dog("Lucy", Breed.BRITTANY, 4));
+		dogs.add(new Dog("Sirko", Breed.CHOW_CHOW, 2));
+		dogs.add(new Dog("Wonderdog", Breed.BULLDOG, 7));
 		assertTrue(Dog.compareName(dogs));
 		
 	}
 
 	@Test
 	public final void testOldestDog() {
-		Dog[] dogs = new Dog[3];
-		dogs[0] = new Dog("Lucy", Breed.BRITTANY, 4);
-		dogs[1] = new Dog("Sirko", Breed.CHOW_CHOW, 2);
-		dogs[2] = new Dog("Wonderdog", Breed.BULLDOG, 7);
-		assertEquals(dogs[Dog.oldestDog(dogs)].getAge(), 7);
+		List<Dog> dogs = new ArrayList<Dog>();
+		dogs.add(new Dog("Lucy", Breed.BRITTANY, 4));
+		dogs.add(new Dog("Sirko", Breed.CHOW_CHOW, 2));
+		dogs.add(new Dog("Wonderdog", Breed.BULLDOG, 7));
+		assertEquals(dogs.get(2).getAge(), 7);
 		
 	}
 

@@ -1,6 +1,6 @@
 package H4;
 
-
+import java.util.List;
 
 /* class Dog with fields name, breed, age. 
 Declare enum for field breed. 
@@ -48,23 +48,24 @@ public class Dog {
 		this.age = age;
 	}
 
-	public static boolean compareName(Dog[] dogs) {
+	public static boolean compareName(List<Dog> dogs) {
 		boolean flag = true;
-		for (int j = 0; j < dogs.length; j++)
-			for (int i = j; i < dogs.length - 1; i++) {
-				if (dogs[i + 1].getName().equals(dogs[j].getName())) {
+		for (int j = 0; j < dogs.size() - 1; j++) {
+			for (int i = j + 1; i < dogs.size(); i++) {
+				if (dogs.get(i).getName().equals(dogs.get(j).getName())) {
 					flag = false;
 				}
 			}
+		}
 		return flag;
 
 	}
 
-	public static int oldestDog(Dog[] dogs) {
+	public static int oldestDog(List<Dog> dogs) {
 		int max = 0, index = 0;
-		for (int i = 0; i < dogs.length; i++)
-			if (dogs[i].getAge() > max) {
-				max = dogs[i].getAge();
+		for (int i = 0; i < dogs.size(); i++)
+			if (dogs.get(i).getAge() > max) {
+				max = dogs.get(i).getAge();
 				index = i;
 			}
 		return index;
