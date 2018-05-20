@@ -1,0 +1,5 @@
+
+public enum Breed {
+	BULLDOG,ROTTWEILER,GERMANSHEPHERD;
+
+}
