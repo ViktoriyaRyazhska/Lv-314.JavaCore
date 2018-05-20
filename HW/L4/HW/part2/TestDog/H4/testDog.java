@@ -1,4 +1,5 @@
 package H4;
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -11,7 +12,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class testDog {
-	
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -36,7 +36,7 @@ public class testDog {
 		dogs.add(new Dog("Sirko", Breed.CHOW_CHOW, 2));
 		dogs.add(new Dog("Wonderdog", Breed.BULLDOG, 7));
 		assertTrue(Dog.compareName(dogs));
-		
+
 	}
 
 	@Test
@@ -45,8 +45,8 @@ public class testDog {
 		dogs.add(new Dog("Lucy", Breed.BRITTANY, 4));
 		dogs.add(new Dog("Sirko", Breed.CHOW_CHOW, 2));
 		dogs.add(new Dog("Wonderdog", Breed.BULLDOG, 7));
-		assertEquals(dogs.get(2).getAge(), 7);
-		
+		assertEquals(dogs.get(Dog.oldestDog(dogs)).getAge(), 7);
+
 	}
 
 }
