@@ -1,6 +1,8 @@
-package home2;
+package H4;
 
-/*Ñreate class Dog with fields name, breed, age. 
+
+
+/* class Dog with fields name, breed, age. 
 Declare enum for field breed. 
 Create 3 instances of type Dog. 
 Check if there is no two dogs with the same name. 
