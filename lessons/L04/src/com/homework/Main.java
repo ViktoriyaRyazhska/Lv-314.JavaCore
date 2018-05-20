@@ -7,9 +7,10 @@ import java.io.InputStreamReader;
 public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args) throws IOException {
-//        threeNumbers();
-//        dayOfWeek();
-//        nameOfContinent();
+        threeNumbers();
+        dayOfWeek();
+        nameOfContinent();
+        product();
     }
     public static void threeNumbers() throws IOException {
         System.out.println("Введи три числа");
@@ -57,7 +58,6 @@ public class Main {
                 break;
         }
     }
-
     public static void nameOfContinent() throws IOException {
         Continents continent = null;
 
@@ -96,5 +96,20 @@ public class Main {
                 break;
         }
         System.out.println(continent);
+    }
+    public static void product() throws IOException {
+        Product[] p = new Product[4];
+        p[0] = new Product("Tomat", 10.1, 103);
+        p[1] = new Product("Carrot", 20.2, 102);
+        p[2] = new Product("Potato", 30.3, 101);
+        p[3] = new Product("Garlic", 40.4, 100);
+
+        System.out.println(p[0]);
+        System.out.println(p[1]);
+        System.out.println(p[2]);
+        System.out.println(p[3]);
+
+        System.out.println(p[Product.mostExpensiveItem(p)].getName());
+        System.out.println(p[Product.theBiggestQuantity(p)].getName());
     }
 }
