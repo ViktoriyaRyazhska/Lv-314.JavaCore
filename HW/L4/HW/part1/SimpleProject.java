@@ -5,11 +5,7 @@ public class SimpleProject {
 
 	// read 3 float numbers and check: are they all belong to the range [-5,5]
 	public static boolean isInRange(float a, float b, float c) {
-		if (a >= -5 && a <= 5 && b >= -5 && b <= 5 && c >= -5 && c <= 5) {
-			return true;
-		} else {
-			return false;
-		}
+		return a >= -5 && a <= 5 && b >= -5 && b <= 5 && c >= -5 && c <= 5;
 
 	}
 
