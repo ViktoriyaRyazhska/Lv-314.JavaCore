@@ -1,14 +1,14 @@
-                     HW1  HW3  HW4
-                         Class  
-Dmytro Malakhov       +    +           
+                     HW1  HW3   HW4
+                         Class if...  
+Dmytro Malakhov       +    +     +           
 Oleh Fedynchuk            
-Stanislav Zhuravel'       
+Stanislav Zhuravel'        +     +       
 Vitalii Dzen'         +    +              
-Taras Luchak          +    .     
+Taras Luchak          +    +     +     
 Yurii Tereshko        +    
 Yaroslav Schurko           
 Vytalyi Chubryn       +           
-Petro Il'kiv          +    +               
-Bohdan Bondar         +  
+Petro Il'kiv          +    +     +               
+Bohdan Bondar         +    +     +  
 Pavel Kolominov
 Oleg Kovaliuk 	      +   
