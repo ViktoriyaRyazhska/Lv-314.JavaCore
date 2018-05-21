@@ -58,7 +58,7 @@ public class Employee {
 		return (perсent*salary())/100;
 	}
 	
-	public void all_Time(){
+	public static void all_Time(){
 		System.out.println("Total hours of all workers "+totalHours);
 	}
 	
