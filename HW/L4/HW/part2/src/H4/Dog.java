@@ -54,6 +54,7 @@ public class Dog {
 			for (int i = j + 1; i < dogs.size(); i++) {
 				if (dogs.get(i).getName().equals(dogs.get(j).getName())) {
 					flag = false;
+					break;
 				}
 			}
 		}

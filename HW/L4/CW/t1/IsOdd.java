@@ -14,9 +14,7 @@ public class IsOdd {
 	public static void isOdd(int number) {
 		if (number % 2 == 0) {
 			count++;
-		} else {
-
-		}
+		} 
 	}
 
 }
