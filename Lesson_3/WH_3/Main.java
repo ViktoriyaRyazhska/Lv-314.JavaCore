@@ -24,7 +24,7 @@ public class Main {
 		System.out.println(Ann.getHours());
 		System.out.println(Ann.getRate());
 		
-		Lidia.all_Time();
+		Employee.all_Time();
 		
 		
 		System.out.println(Max.toStrig());
