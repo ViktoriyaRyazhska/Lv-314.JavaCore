@@ -78,12 +78,17 @@ public class Main {
 		
 															//4
 		
-		Product pizza=new Product("Pizza", 20, 30);
+		Product pizza=new Product("Pizza", 20.8, 30);
 		Product bread=new Product("Bread", 100, 100);
-		Product milk=new Product("Milk", 23, 12);
-		Product sweets=new Product("Sweets", 60, 28);
+		Product milk=new Product("Milk", 20.81, 12);
+		Product sweets=new Product("Sweets", 60, 1);
 
 		Product [] product_Array= new Product [] {pizza, bread, milk, sweets};		
+	
+		product_Array[0].to_sort_for_Price(product_Array);
+		product_Array[0].sOut_product_Array_Price(product_Array);
+		
+		System.out.println("**************");
 		
 		product_Array[0].to_sort_for_Quantity(product_Array);
 		product_Array[0].sOut_product_Array_Quantity(product_Array);
@@ -93,9 +98,11 @@ public class Main {
 		product_Array[0].to_sort_for_Price(product_Array);
 		product_Array[0].sOut_product_Array_Price(product_Array);
 		
-		// При другому сортуванні значення сортуються правильно, але поля Name не правильно
+		//При другому сортуванні мотодом to_sort_for_Price дробове число неправильно сортується (хоч при 1-му все добре).
 		
-
+		
+		
+		
 	}
 
 }
