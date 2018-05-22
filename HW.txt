@@ -1,9 +1,9 @@
                      HW1  HW3   HW4
                          Class if...  
 Dmytro Malakhov       +    +     +           
-Oleh Fedynchuk            
+Oleh Fedynchuk        +    .     +            
 Stanislav Zhuravel'        +     +       
-Vitalii Dzen'         +    +              
+Vitalii Dzen'         +    +     +             
 Taras Luchak          +    +     +     
 Yurii Tereshko        +    
 Yaroslav Schurko           
