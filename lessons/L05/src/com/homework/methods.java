@@ -65,7 +65,7 @@ public class methods {
 
     public static void employee() throws IOException {
 
-        emp[1] = new Employee("Dima", 1, 1000);
+        emp[1] = new Employee("Dima", 1, 1);
         emp[2] = new Employee("Serg", 1, 2000);
         emp[3] = new Employee("Vika", 2, 6000);
         emp[4] = new Employee("Vova", 2, 4000);
