@@ -1,6 +1,10 @@
+package Home;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /*Ask user to enter the number of month. Read the value and write the amount of days in 
  * this month (create array with amount days of each month).
@@ -14,7 +18,7 @@ Create class Car with fields type, year of production and engine capacity. Creat
 class Car. Display cars
 certain model year  (enter year in the console);
 ordered by the field year.*/
-public class Home {
+public class MainClass {
 	// return amount of days
 	public static int daysOfMonth(int number_month) {
 		int[] days_of_month = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -41,7 +45,7 @@ public class Home {
 	}
 
 	// Calculate product , read array from end
-	public static int productArray(int[] array, int how_mutch_elements) {
+	private static int productArray(int[] array, int how_mutch_elements) {
 		int product = 1;
 		for (int i = how_mutch_elements - 1; i > 0; i--) {
 			product *= array[i];
@@ -51,7 +55,7 @@ public class Home {
 	}
 
 	// Check array how much positive number it have ; Interval [x;y]
-	public static int countPositiveNumber(int[] array, int x, int y) {
+	private static int countPositiveNumber(int[] array, int x, int y) {
 		int count = 0;
 		for (int i = x; i < y; i++) {
 			if (array[i] > 0)
@@ -80,7 +84,6 @@ public class Home {
 				if (count == 2) {
 					break;
 				}
-
 			}
 		}
 		return index_second_positive_number;
@@ -99,22 +102,25 @@ public class Home {
 		return index_min;
 
 	}
-//NOT WORK "need create dynamic array, not LIST"
+
+
 	// If entered number is negative -> Calculate production
 	public static void enteredArray() throws NumberFormatException, IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		List<int> array = new ArrayList<int>();
-		
-		int i = 0, entered_number;
-		while (true) {
+		List<Integer> array = new ArrayList<Integer>();
+		int entered_number = 1;
+		while (entered_number > 0) {
 			entered_number = Integer.parseInt(reader.readLine());
 			array.add(entered_number);
-			if (entered_number < 0) {
-				break;
-			}
 		}
-		System.out.println("The product element =" + productArray(array, array.length));
-
+		System.out.println("The product element =" + productList(array));
 	}
 
+	private static int productList(List<Integer> array) {
+		int product = 1;
+		for (int i = 0; i < array.size(); i++) {
+			product *= array.get(i);
+		}
+		return product;
+	}
 }
