@@ -8,9 +8,9 @@ import java.util.Arrays;
 public class numberOfMonth {
     public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) throws IOException {
-        mouth();
-    }
+//    public static void main(String[] args) throws IOException {
+//        mouth();
+//    }
 
     public static void mouth() throws IOException {
         System.out.println("Input number of month:");
