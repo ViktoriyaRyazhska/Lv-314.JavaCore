@@ -3,7 +3,7 @@
 Dmytro Malakhov       +    +     +           
 Oleh Fedynchuk        +    +     +            
 Stanislav Zhuravel'        +     +       
-Vitalii Dzen'         +    +     +             
+Vitalii Dzen'         +    +     +     +             
 Taras Luchak          +    +     +     +     
 Yurii Tereshko        +    
 Yaroslav Schurko           
