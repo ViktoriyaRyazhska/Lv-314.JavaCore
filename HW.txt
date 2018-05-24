@@ -1,6 +1,6 @@
                      HW1  HW3   HW4   HW5
                          Class if... loops  
-Dmytro Malakhov       +    +     +           
+Dmytro Malakhov       +    +     +     .           
 Oleh Fedynchuk        +    +     +            
 Stanislav Zhuravel'        +     +       
 Vitalii Dzen'         +    +     +     +             
