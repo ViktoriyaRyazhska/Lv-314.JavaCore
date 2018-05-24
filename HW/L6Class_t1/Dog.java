@@ -1,6 +1,6 @@
 package L6Class_t1;
 
-public class Dog implements Animal{
+public class Dog implements Animal {
 
 	@Override
 	public String voice() {

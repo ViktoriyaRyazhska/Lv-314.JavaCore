@@ -17,7 +17,7 @@ public class Main {
 	public static void showArrayObject(Bird[] birds) {
 		for (int i = 0; i < birds.length; i++) {
 
-			System.out.println(birds[i].fly());
+			System.out.println("Can fly? "+birds[i].fly()+" Lay e");
 
 		}
 
