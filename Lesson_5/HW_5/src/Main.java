@@ -55,7 +55,7 @@ public class Main {
 			System.out.println(int_arr[i]);
 		}
 																//3(a)
-		
+		/*
 		for(int i=0; i<int_arr.length; i++){
 			if(int_arr[i]>0){
 				count++;
@@ -70,7 +70,20 @@ public class Main {
 				System.out.println("There is no one positive number on second position");  
 			}
 		}
+		*/
 		
+			for(int i=0; i<int_arr.length; i++){
+				if(int_arr[i]>0){
+					count++;
+					if(count==2){
+						System.out.println("Position of second positive number="+i);
+						break;
+					}
+				}
+				if (count < 2 ){
+					System.out.println("There is no one positive number on second position");
+				}
+			}
 																//3(b)
 		
 		int index_of_minimum=0;
