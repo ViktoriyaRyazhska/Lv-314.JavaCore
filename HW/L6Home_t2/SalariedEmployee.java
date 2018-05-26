@@ -1,15 +1,14 @@
 package L6Home_t2;
 //Create two classes SalariedEmployee and ContractEmployee,which implement interface and are inherited from the base class.
 public class SalariedEmployee extends Employee implements Salary {
-	private float hourly_rate = 0.1f;
-	private int hours_worked = 0;
+	private  float hourly_rate = 0.1f;
+	private  int hours_worked = 0;
 	private String socialSecurityNumber;//Describe the string variable socialSecurityNumber in the class SalariedEmployee .
 
 	SalariedEmployee() {
 	}
 
 	SalariedEmployee(float hourly_rate, int hours_worked, String socialSecurityNumber) {
-		super();
 		this.hourly_rate = hourly_rate;
 		this.hours_worked = hours_worked;
 		this.socialSecurityNumber = socialSecurityNumber;
@@ -41,8 +40,9 @@ public class SalariedEmployee extends Employee implements Salary {
 //Describe hourly paid workers in the relevant classes (one of the children)
 	@Override
 	public float calculatePay() {
-//The calculation formula for the "time-worker“ is: "the average monthly salary = hourly rate * number		of hours worked“
-		return this.hourly_rate * hours_worked;
+		// The calculation formula for the "time-worker“ is: "the average monthly salary
+		// = hourly rate * number		of hours worked“
+		return this.hourly_rate * this.hours_worked;
 	}
 
 }
