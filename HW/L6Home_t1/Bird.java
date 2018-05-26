@@ -12,10 +12,10 @@ Call fly() method for all of it. Output the
 information about each type of created bird.*/
 
 public abstract class Bird {
-	private String feathers;
-	private String layEggs;
+	private boolean feathers;
+	private boolean layEggs;
 
-	public Bird(String feathers, String layEggs) {
+	public Bird(boolean feathers, boolean layEggs) {
 		super();
 		this.feathers = feathers;
 		this.layEggs = layEggs;
@@ -24,19 +24,19 @@ public abstract class Bird {
 	public Bird() {
 	}
 
-	public String getFeathers() {
+	public boolean getFeathers() {
 		return feathers;
 	}
 
-	public void setFeathers(String feathers) {
+	public void setFeathers(boolean feathers) {
 		this.feathers = feathers;
 	}
 
-	public String getLayEggs() {
+	public boolean getLayEggs() {
 		return layEggs;
 	}
 
-	public void setLayEggs(String layEggs) {
+	public void setLayEggs(boolean layEggs) {
 		this.layEggs = layEggs;
 	}
 

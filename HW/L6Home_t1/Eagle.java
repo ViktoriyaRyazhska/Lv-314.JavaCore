@@ -1,33 +1,36 @@
 package L6Home_t1;
 
 public class Eagle extends FlyingBird {
+	Eagle() {
+	}
+
+	Eagle(boolean lay_eggs, boolean feathers) {
+		super.setLayEggs(lay_eggs);
+		super.setFeathers(feathers);
+
+	}
 	@Override
 	boolean fly() {
-		// TODO Auto-generated method stub
 		return super.fly();
 	}
 
 	@Override
-	public String getFeathers() {
-		// TODO Auto-generated method stub
+	public boolean getFeathers() {
 		return super.getFeathers();
 	}
 
 	@Override
-	public void setLayEggs(String layEggs) {
-		// TODO Auto-generated method stub
+	public void setLayEggs(boolean layEggs) {
 		super.setLayEggs(layEggs);
 	}
 
 	@Override
-	public String getLayEggs() {
-		// TODO Auto-generated method stub
+	public boolean getLayEggs() {
 		return super.getLayEggs();
 	}
 
 	@Override
-	public void setFeathers(String feathers) {
-		// TODO Auto-generated method stub
+	public void setFeathers(boolean feathers) {
 		super.setFeathers(feathers);
 	}
 	
