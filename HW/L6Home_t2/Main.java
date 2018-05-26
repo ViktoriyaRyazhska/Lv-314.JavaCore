@@ -1,6 +1,7 @@
 package L6Home_t2;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /*Create an array of employees and add the employees with different form of payment.
@@ -11,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		List<Employee> employee = new ArrayList<Employee>();
-		employee.add(new SalariedEmployee(20.5f, 300, "11111111"));
+		employee.add(new SalariedEmployee(20.5f, 670, "11111111"));
 		employee.add(new ContractEmployee("2222222"));
 		employee.get(0).setName("Olha");
 		employee.get(1).setName("Mykola");
@@ -19,24 +20,18 @@ public class Main {
 		employee.get(1).setEmployee_id("2");
 		display(employee);
 		sortBySallary(employee);
-		// display(employee);
+		display(employee);
 	}
-
 	// Sort array by salary
-	public static List<Employee> sortBySallary(List<Employee> employee) {
-
-		Employee dummy = null;
-		// bubble
-		for (int i = 0; i < employee.size() - 1; i++) {
-			for (int j = i + 1; j < employee.size(); j++) {
-				if (((Salary) employee.get(i)).calculatePay() > ((Salary) employee.get(j)).calculatePay()) {// salary
-					dummy = employee.get(i);
-					employee.add(i, employee.get(j));
-					employee.add(j, dummy);
-				}
+	public static void sortBySallary(List<Employee> employee) {
+		employee.sort(new Comparator<Employee>() {
+			public int compare(Employee a, Employee b) {
+				if (((Salary) a).calculatePay() > ((Salary) b).calculatePay())
+					return -1;
+				else
+					return 1;
 			}
-		}
-		return employee;
+		});
 	}
 
 	// display array
