@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Util {
+public class Methods {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void theRange() throws IOException {
@@ -13,23 +13,6 @@ public class Util {
         double b = Double.parseDouble(br.readLine());
         double c = Double.parseDouble(br.readLine());
 
-//        if ( (a > -5) && (a < 5) ) {
-//            System.out.println(a + " is belong to the range [-5,5]");
-//        } else {
-//            System.out.println(a + " isn't belong to the range [-5,5]");
-//        }
-//
-//        if ( (b > -5) && (b < 5) ) {
-//            System.out.println(b + " is belong to the range [-5,5]");
-//        } else {
-//            System.out.println(b + " isn't belong to the range [-5,5]");
-//        }
-//
-//        if ( (c > -5) && (c < 5) ) {
-//            System.out.println(c + " is belong to the range [-5,5]");
-//        } else {
-//            System.out.println(c + " isn't belong to the range [-5,5]");
-//        }
         isRange(a);
         isRange(b);
         isRange(c);
@@ -102,9 +85,5 @@ public class Util {
                 break;
         }
         System.out.println(error);
-    }
-
-    public static void dogs() {
-
     }
 }
