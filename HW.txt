@@ -1,14 +1,14 @@
-                     HW1  HW3   HW4   HW5
-                         Class if... loops  
-Dmytro Malakhov       +    +     +     .           
+                     HW1  HW3   HW4   HW5   HW6
+                         Class if... loops  OOP  
+Dmytro Malakhov       +    +     +     +      .           
 Oleh Fedynchuk        +    +     +            
-Stanislav Zhuravel'        +     +       
-Vitalii Dzen'         +    +     +     +             
-Taras Luchak          +    +     +     +     
+Stanislav Zhuravel'        +     +            .       
+Vitalii Dzen'         +    +     +     +      +             
+Taras Luchak          +    +     +     +      .     
 Yurii Tereshko        +    
 Yaroslav Schurko           
 Vytalyi Chubryn       +          +           
-Petro Il'kiv          +    +     +     +               
-Bohdan Bondar         +    +     +  
-Pavel Kolominov       +
+Petro Il'kiv          +    +     +     +      +               
+Bohdan Bondar         +    +     +     +  
+Pavel Kolominov       +    +                  .
 Oleg Kovaliuk 	      +   
