@@ -1,8 +1,7 @@
 package com.t2;
 
 import java.io.IOException;
-
-import static com.t1.NumberOfMonth.br;
+import static com.homework.Main.br;
 
 public class Calculate {
 

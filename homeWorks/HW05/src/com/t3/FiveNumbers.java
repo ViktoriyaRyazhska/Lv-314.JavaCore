@@ -2,9 +2,7 @@ package com.t3;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-
-import static com.t1.NumberOfMonth.br;
+import static com.homework.Main.br;
 
 public class FiveNumbers {
     public static void fiveNumbers() throws IOException {

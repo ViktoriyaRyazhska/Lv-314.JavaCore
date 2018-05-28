@@ -1,12 +1,10 @@
 package com.t1;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
+import static com.homework.Main.br;
 
 public class NumberOfMonth {
-    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void mouth() throws IOException {
         System.out.println("Input number of month:");
