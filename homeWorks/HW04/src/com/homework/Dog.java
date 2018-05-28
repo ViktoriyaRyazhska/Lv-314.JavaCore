@@ -53,6 +53,7 @@ public class Dog {
             for (int j = i + 1; j < dogs.length; j++) {
                 if (dogs[i].getName().equals(dogs[j].getName())) {
                     idx += 1;
+                    break;
                 }
             }
         }

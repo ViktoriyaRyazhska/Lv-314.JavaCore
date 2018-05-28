@@ -2,13 +2,9 @@ package com.t2;
 
 import java.io.IOException;
 
-import static com.t1.numberOfMonth.br;
+import static com.t1.NumberOfMonth.br;
 
 public class Calculate {
-
-    public static void main(String[] args) throws IOException {
-        tenNumbers();
-    }
 
     public static void tenNumbers() throws IOException {
         System.out.println("Input 10 numbers:");
@@ -29,11 +25,12 @@ public class Calculate {
         for (int i = 0; i < 5; i++) {
             if (arr[i] < 0) {
                 fiveNumbers = false;
+                break;
             }
         }
         int summ = 0;
         int product = 1;
-        if (fiveNumbers == true) {
+        if (fiveNumbers) {
             for (int i = 0; i < 5; i++) {
                 summ += arr[i];
             }

@@ -5,12 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class numberOfMonth {
+public class NumberOfMonth {
     public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-//    public static void main(String[] args) throws IOException {
-//        mouth();
-//    }
 
     public static void mouth() throws IOException {
         System.out.println("Input number of month:");
@@ -21,40 +17,20 @@ public class numberOfMonth {
 
         switch (month){
             case "1" :
+            case "3" :
+            case "5" :
+            case "7" :
+            case "8" :
+            case "10" :
+            case "12" :
                 System.out.println(thirtyOne);
                 break;
             case "2" :
-                System.out.println(thirty);
-                break;
-            case "3" :
-                System.out.println(thirtyOne);
-                break;
             case "4" :
-                System.out.println(thirty);
-                break;
-            case "5" :
-                System.out.println(thirtyOne);
-                break;
             case "6" :
-                System.out.println(thirty);
-                break;
-            case "7" :
-                System.out.println(thirtyOne);
-                break;
-            case "8" :
-                System.out.println(thirtyOne);
-                break;
             case "9" :
-                System.out.println(thirty);
-                break;
-            case "10" :
-                System.out.println(thirtyOne);
-                break;
             case "11" :
                 System.out.println(thirty);
-                break;
-            case "12" :
-                System.out.println(thirtyOne);
                 break;
         }
     }
