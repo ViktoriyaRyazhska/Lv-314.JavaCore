@@ -1,16 +1,18 @@
 package L6Home_t2;
 
-//Create two classes SalariedEmployee and ContractEmployee,which implement interface and are inherited from the base class.
+/*Create two classes SalariedEmployee and ContractEmployee
+which implement interface and are inherited from the base class.*/
 public class ContractEmployee extends Employee implements Salary {
-	private String federalTaxIdmember; // Include a description of federalTaxIdmember in the class of ContractEmployee
-										// .
+	// Include a description of federalTaxIdmember in the class of ContractEmployee
+	private String federalTaxIdmember;
 
 	ContractEmployee() {
-
 	}
 
-	public ContractEmployee(String federalTaxIdmember) {
+	public ContractEmployee(String federalTaxIdmember, String name, String setEmployeeId) {
 		this.federalTaxIdmember = federalTaxIdmember;
+		super.setName(name);
+		super.setEmployee_id(setEmployeeId);
 	}
 
 	public String getFederalTaxIdmember() {
@@ -21,11 +23,12 @@ public class ContractEmployee extends Employee implements Salary {
 		this.federalTaxIdmember = federalTaxIdmember;
 	}
 
-	// fixed paid workers (second child).
+	/* fixed paid workers (second child). For employees with a fixed payment the
+	 * formula is: "the average monthly salary = fixed monthly payment“
+	 */
 	@Override
 	public float calculatePay() {
-		return 1500f;// For employees with a fixed payment the formula is: "the average monthly
-						// salary = fixed monthly payment“
+		return 1500f;
 	}
 
 }
