@@ -8,31 +8,5 @@ public class Chicken extends NonFlyingBird {
 	Chicken(boolean lay_eggs, boolean feathers) {
 		super.setLayEggs(lay_eggs);
 		super.setFeathers(feathers);
-
-	}
-
-	@Override
-	boolean fly() {
-		return super.fly();
-	}
-
-	@Override
-	public boolean getFeathers() {
-		return super.getFeathers();
-	}
-
-	@Override
-	public void setLayEggs(boolean layEggs) {
-		super.setLayEggs(layEggs);
-	}
-
-	@Override
-	public boolean getLayEggs() {
-		return super.getLayEggs();
-	}
-
-	@Override
-	public void setFeathers(boolean feathers) {
-		super.setFeathers(feathers);
 	}
 }
