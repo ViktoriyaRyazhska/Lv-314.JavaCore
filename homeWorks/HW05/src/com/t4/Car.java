@@ -49,6 +49,13 @@ public class Car {
         this.engineCapacity = engineCapacity;
     }
 
+    public static void input(Car[] car){
+        car[0] = new Car("Maserati", 2017, 2.5);
+        car[1] = new Car("Ferrari", 2018, 3.0);
+        car[2] = new Car("Mercedes", 2015, 3.5);
+        car[3] = new Car("Lamborghini", 2016, 4.0);
+    }
+
     public static void display(Car[] car) {
         for (int i = 0; i < car.length; i++) {
             System.out.println(car[i]);
