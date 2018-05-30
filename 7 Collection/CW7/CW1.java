@@ -26,7 +26,7 @@ public class CW1 {
 		// Print newCollection
 
 		List<Integer> newCollection = new ArrayList<Integer>(); // >5
-		for (int i = 0; i < sizearr; i++) {
+		for (int i = 0; i < myCollection.size(); i++) {
 			if (myCollection.get(i) > 5) {
 				newCollection.add(myCollection.get(i));
 			}
