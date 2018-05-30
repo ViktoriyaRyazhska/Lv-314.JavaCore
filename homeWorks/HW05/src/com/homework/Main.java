@@ -13,20 +13,20 @@ public class Main {
     public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static Car[] car = new Car[4];
     public static void main(String[] args) throws IOException {
-        NumberOfMonth.mouth();
-        System.out.println();
-        Calculate.tenNumbers();
-        System.out.println();
-        FiveNumbers.fiveNumbers();
-        System.out.println();
+//        NumberOfMonth.mouth();
+//        System.out.println();
+//        Calculate.tenNumbers();
+//        System.out.println();
+//        FiveNumbers.fiveNumbers();
+//        System.out.println();
         OrganizingNumbers.organizingNumbers();
-        System.out.println();
-        Car.input(car);
-        System.out.println();
-        Car.display(car);
-        System.out.println();
-        Car.chooseTheCar(car);
-        System.out.println();
-        Car.orderedByYear(car);
+//        System.out.println();
+//        Car.input(car);
+//        System.out.println();
+//        Car.display(car);
+//        System.out.println();
+//        Car.chooseTheCar(car);
+//        System.out.println();
+//        Car.orderedByYear(car);
     }
 }
