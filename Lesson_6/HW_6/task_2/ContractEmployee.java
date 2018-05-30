@@ -10,7 +10,7 @@ public class ContractEmployee extends Employee implements Pay{
 
 	@Override
 	public double calculatePay() {
-		if(isOne_Childrenl()==true){
+		if(isOne_Childrenl()){
 			month_salary+=(month_salary*10)/100;
 			if(isSecond_Childrenl()==true){
 				month_salary+=(month_salary*15)/100;
