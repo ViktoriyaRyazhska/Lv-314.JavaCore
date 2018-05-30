@@ -32,7 +32,8 @@ public class Main {
 		persons.put("Viktoria", "Ryazhska");
 	}
 
-	// I dont know correct is it, but its work
+	// I dont know correct is it, but its work,
+	// if I have enough time, I'll be back to this task
 	public static boolean isTheSameName(Map<String, String> persons) {
 		Map<String, String> personsTest = new HashMap<String, String>();
 		personsTest.putAll(persons);
@@ -72,7 +73,7 @@ public class Main {
 			return false;
 		}
 
-	}
+	}*/
 
 	public static void deleteByFirstName(Map<String, String> persons, String firstName) {
 
