@@ -19,8 +19,19 @@ display the list of students ordered by course.*/
 public class Main {
 
 	public static void main(String[] args) {
-List<Students> students = new ArrayList<Students>();
-students.add(new Students("Petro",4));
+		List<Students> students = new ArrayList<Students>();
+		students.add(new Students("Petro", 4));
+		students.add(new Students("Oleg", 3));
+		students.add(new Students("Mykola", 3));
+		students.add(new Students("Samon", 4));
+		students.add(new Students("Ihor", 1));
+		Students.printStudent(students, 3);
+		System.out.println(students);
+		Students.sortByCourse(students);
+		System.out.println(students);
+		Students.sortByName(students);
+		System.out.println(students);
+
 	}
 
 }

@@ -1,8 +1,9 @@
 package L7Home_t3;
 
+import java.util.Comparator;
 import java.util.List;
 
-public class Students{
+public class Students {
 	private String name;
 	private Integer curs;
 
@@ -38,10 +39,26 @@ public class Students{
 			}
 		}
 	}
-	public static void compareByCours() {};
-	public static void compareByName() {};
-	public static void sortByName() {};
-	public static void sortByCourse() {};
-	
+
+	@Override
+	public String toString() {
+		return "[name=" + name + ", curs=" + curs + "]";
+	}
+
+	public static void sortByName(List<Students> students) {
+		students.sort(new Comparator<Students>() {
+			public int compare(Students a, Students b) {
+				return a.name.compareTo(b.name);
+			}
+		});
+	}
+
+	public static void sortByCourse(List<Students> students) {
+		students.sort(new Comparator<Students>() {
+			public int compare(Students a, Students b) {
+				return a.curs < b.curs ? -1 : 1;
+			}
+		});
+	}
 
 }

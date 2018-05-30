@@ -73,7 +73,7 @@ public class Main {
 			return false;
 		}
 
-	}*/
+	}
 
 	public static void deleteByFirstName(Map<String, String> persons, String firstName) {
 
