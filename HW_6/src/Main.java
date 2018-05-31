@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -51,9 +52,11 @@ public class Main {
 		emp[3] = new ContractEmployee("7984358481", "4", "Johanna");
 
 		Set<Employee> emp1 = new TreeSet(Employee.getToComp());
-		for (Employee employee : emp) {
-			emp1.add(employee);
-		}
+		Collections.addAll(emp1, emp);
+//		for (Employee employee : emp) {
+//			emp1.add(employee);
+//		}
+		
 		for (Employee e : emp1) {
 			System.out.println(e.getName() + ": ID - " + e.getEmployeeID() + ", monthly wage: "
 					+ ((CalculatePay) e).calculatePay());
