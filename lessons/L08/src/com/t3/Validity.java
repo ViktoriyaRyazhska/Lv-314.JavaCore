@@ -1,12 +1,11 @@
 package com.t3;
 
-import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class Validity {
-    public static void validity(String x) throws IOException {
+    public static void validity(String x) {
         String pattern = "[a-zA-Z0-9_]{3,15}";
         String name = x;
         Pattern p = Pattern.compile(pattern);
