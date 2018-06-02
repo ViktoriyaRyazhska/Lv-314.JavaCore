@@ -11,10 +11,8 @@ public class Main {
 		requestToMyString(s, 2);// show name
 		requestToMyString(s, 3);// show name middle name last name
 
-		/*
-		 * Task 2 Validation name can be 3 to 15 characters of the Latin alphabet,
-		 * numbers, and underscores.
-		 */
+		/* Task 2 Validation name can be 3 to 15 characters of the Latin alphabet,
+		 * numbers, and underscores.*/
 		String[] names = { "Ilkiv", "S()vycz", "Eroh@r", "Groot", "Otika>a" };
 		for (int i = 0; i < names.length; i++)
 			System.out.println(validation(names[i]));
@@ -27,26 +25,9 @@ public class Main {
 
 	public static void requestToMyString(String s, int request) {
 		String[] parts = s.split(" ");
-		StringBuilder text = new StringBuilder();
-		switch (request) {
-		case 1: {
-			System.out.println(text.append(parts[0]).append(" ").append(parts[1].substring(0, 1)).append(".")
-					.append(parts[2].substring(0, 1)));
-			break;
-		}
-		case 2: {
-			System.out.println(text.append(parts[1]));
-			break;
-		}
-		case 3: {
-			System.out.println(text.append(parts[1]).append(" ").append(parts[2]).append(" ").append(parts[0]));
-			break;
-		}
-		default: {
-			System.out.println("Wrong request!");
-			break;
-		}
-		}
+		s = request == 1 ? parts[0] + parts[1].charAt(0) + parts[2].charAt(0)
+				: request == 2 ? parts[1] : request == 3 ? parts[1] + parts[2] + parts[0] : "Wrong request!";
+		System.out.println(s);
 	}
 
 	public static boolean validation(String check_name) {
