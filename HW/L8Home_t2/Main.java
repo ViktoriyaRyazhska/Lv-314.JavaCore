@@ -8,11 +8,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		String text = "Me  and my   young team are doing something very     important";
-		System.out.println(formatString(text));
+		System.out.println(text.replaceAll(" +", " "));
 	}
-
-	public static String formatString(String s) {
-		return s.replaceAll(" +", " ");
-	}
-
 }

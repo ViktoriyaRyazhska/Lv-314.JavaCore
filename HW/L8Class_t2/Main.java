@@ -11,20 +11,14 @@ import java.util.regex.Pattern;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String[] names = { "Ilkiv", "S()vycz", "Eroh@r", "Groot", "Otika>a" };
 		for (int i = 0; i < names.length; i++)
 			System.out.println(validation(names[i]));
 	}
 
-	public static boolean validation(String s) {
-		if (s.length() < 3 || s.length() > 15) {
-			System.out.println("Does not meet condition 1");
-			return false;
-		}
-		Pattern p = Pattern.compile("\\w+");
-		Matcher m = p.matcher(s);
+	public static boolean validation(String check_name) {
+		Pattern p = Pattern.compile("\\w{3,15}");
+		Matcher m = p.matcher(check_name);
 		return m.matches();
-
 	}
 }

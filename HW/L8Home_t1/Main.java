@@ -7,33 +7,25 @@ bring the second word in reverse order
 */
 public class Main {
 	public static void main(String[] args) {
-		String text = "The god rabbited";
-		String condition_1 = "Show me longest word";
-		String condition_2 = "Show me length of longest word";
-		String condition_3 = "Ok.Reverse me second word";
-		System.out.println(requestForText(text, condition_3));
-
+		String text = "Who is duty today standup";
+		System.out.println(requestForText(text, 1));
+		System.out.println(requestForText(text, 2));
+		System.out.println(requestForText(text, 3));
 	}
 
-	public static String requestForText(String s, String condition) {
+	public static String requestForText(String s, int request) {
 		String[] word = s.split(" ");
 		int longest_word = word[0].length();
-		int index_longest_word = 0;
-		for (int i = 0; i < word.length; i++) {
+		int pos = 0;
+		for (int i = 1; i < word.length; i++) {
 			if (longest_word < word[i].length()) {
 				longest_word = word[i].length();
-				index_longest_word = i;
+				pos = i;
 			}
 		}
-		if (condition.equals("Show me longest word")) {
-			return word[index_longest_word];
-		} else if (condition.equals("Show me length of longest word")) {
-			return "" + longest_word;
-		} else if (condition.equals("Ok.Reverse me second word")) {
-			return new StringBuilder(word[1]).reverse().toString();
-		} else {
-			return "Something went wrong";
-		}
-
+		s = request == 1 ? word[pos]
+				: request == 2 ? ("" + longest_word)
+						: request == 3 ? new StringBuilder(word[1]).reverse().toString() : "Something went wrong";
+		return s;
 	}
 }
