@@ -9,6 +9,10 @@ ContractEmployee (String name, String id, int federalTaxIdMember, int fixedPayme
 	this.federalTaxIdMember=federalTaxIdMember;
 	this.fixedPayment=fixedPayment;
 	
+}	@Override
+public String toString() {
+	return  super.toString()
+			+ " "+this.calulatePay();
 }
 	@Override
 	public int calulatePay() {

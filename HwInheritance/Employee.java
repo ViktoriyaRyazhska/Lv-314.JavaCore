@@ -3,7 +3,14 @@ package HwInheritance;
 public class Employee {
 	public String employeeId;
 	public String employeeName;
+	
    
+	
+	@Override
+	public String toString() {
+		return  employeeId + " " + employeeName ;
+	}
+
 	public String getEmployeeName() {
 		return employeeName;
 	}

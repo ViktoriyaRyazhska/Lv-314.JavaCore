@@ -37,9 +37,8 @@ public class Main {
 		Main.sortEmployee(staff);
 		//---------------------------------------------------
 		for (int i = 0; i < staff.length; i++) {
-			System.out.println(staff[i].getEmployeeId());
-			System.out.println(staff[i].getEmployeeName());
-			System.out.println(staff[i].calulatePay());
+			System.out.println(staff[i].toString());
+
 			System.out.println();
 		}
 	}
