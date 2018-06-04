@@ -53,7 +53,7 @@ public class CW8_1 {
 		String string2 = sc.nextLine();
 		Pattern p2 = Pattern.compile(string1.toLowerCase());
 		Matcher m2 = p2.matcher(string2.toLowerCase());
-		System.out.println("Determine whether the first variable substring second="+m2.lookingAt());
+		System.out.println("Determine whether the first variable substring second="+m2.find());
 
 	}
 }
