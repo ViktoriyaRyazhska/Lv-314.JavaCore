@@ -2,7 +2,7 @@
                          Class if... loops  OOP  Collect  String  
 Dmytro Malakhov       +    +     +     +      +     +       +           
 Oleh Fedynchuk        +    +     +            
-Stanislav Zhuravel'        +     +            +     +       
+Stanislav Zhuravel'        +     +            +     +       +       
 Vitalii Dzen'         +    +     +     +      +     +       .             
 Taras Luchak          +    +     +     +      +     +       +     
 Yurii Tereshko        +    
