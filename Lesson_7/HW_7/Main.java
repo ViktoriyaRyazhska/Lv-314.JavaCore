@@ -51,7 +51,21 @@ public class Main {
 		for (Map.Entry<String, String> entry : personMap.entrySet()) {
 		    System.out.println("Lastname - "+entry.getKey() + ", Firstname - "+ entry.getValue());
 		}
-		 // ??????????????
+		
+							//dell value, які повторюються
+		/*
+		Collection list = personMap.values();
+		Set set = new HashSet();
+		set.addAll(list);
+
+			System.out.println(list);
+			System.out.println(set);
+			if (set.size() == list.size()) {
+				System.out.println("No");
+			}
+		*/
+		
+		
 		*/
 		
 		

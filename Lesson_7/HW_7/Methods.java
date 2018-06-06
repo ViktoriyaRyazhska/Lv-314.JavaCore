@@ -17,6 +17,7 @@ public class Methods {
 			return set2;
 		}
 		else{
+			/*
 			Set set_r_1 = new HashSet();
 			Set set_r_2 = new HashSet();
 			set_r_1.addAll(set1);
@@ -24,6 +25,11 @@ public class Methods {
 			set_r_1.retainAll(set_r_2);
 			set_r_2.retainAll(set_r_1);
 		return set_r_2;
+			*/
+			Set set_r_1 = new HashSet();
+			set_r_1.addAll(set1);
+			set_r_1.retainAll(set2);
+		return set_r_1;
 		}
 	}
 	
