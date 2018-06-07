@@ -6,15 +6,15 @@ public class Main {
 		try {
 			Plant [] plants_arr = new Plant [5];
 			plants_arr[0] = new Plant(12, "White", "rose");
-				System.out.println(plants_arr[0].toString());
+				System.out.println(plants_arr[0]);
 //			plants_arr[1] = new Plant(2, "Red", "dfdfgd");
-//				System.out.println(plants_arr[1].toString());
+//				System.out.println(plants_arr[1]);
 			plants_arr[2] = new Plant(41, "Green", "tUlip");
-				System.out.println(plants_arr[2].toString());
+				System.out.println(plants_arr[2]);
 //			plants_arr[3] = new Plant(39, "Blue", "CHAMOMIle");
-//				System.out.println(plants_arr[3].toString());
+//				System.out.println(plants_arr[3]);
 //			plants_arr[4] = new Plant(11, "Orange", "tUlip");
-//				System.out.println(plants_arr[4].toString());
+//				System.out.println(plants_arr[4]);
 		} catch (ColorException e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
