@@ -12,15 +12,13 @@ public class Main {
 		System.out.println("Enter in the console sentence of five words");
 		String []  str = (scan.nextLine().split(" "));
 		String biggest=str[0];
-		int int_biggest=str[0].length();
 		
 		for(int i=1; i<str.length; i++) {
-			if(str[i].length()>int_biggest){
-				int_biggest=str[i].length();
+			if(str[i].length()>biggest.length()){
 				biggest=str[i];
 			}
 		}
-		System.out.println("The longest word is - "+biggest+", its length is - "+int_biggest);
+		System.out.println("The longest word is - "+biggest+", its length is - "+biggest.length());
 		StringBuilder sb = new StringBuilder(str[1]);
 		sb.reverse();
 		System.out.println("Second word in reverse: "+sb.toString());
