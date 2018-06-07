@@ -38,6 +38,7 @@ public class Plant {
 		for(int i=0; i<colors_enum_arr.length; i++) {
 			if(color.toUpperCase().equals(colors_enum_arr[i].toString())) {
 				this.color=colors_enum_arr[i];
+				break;
 			}
 		}
 		if(this.color==null){
@@ -50,6 +51,7 @@ public class Plant {
 		for(int i=0; i<types_enum_arr.length; i++) {
 			if(type.toUpperCase().equals(types_enum_arr[i].toString())) {
 				this.type=types_enum_arr[i];
+				break;
 			}
 		}
 		if(this.type==null){
