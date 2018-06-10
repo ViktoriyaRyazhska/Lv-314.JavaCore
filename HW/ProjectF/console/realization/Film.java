@@ -1,15 +1,55 @@
 package console.realization;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Film {
 	private float general_Point = 0;
 	private float IMDB = 1;
-	private String[] actors; // its contains actors of film witch user selected
-	private String[] genres;
-	private String[] directors;
-	private String[] studious;
+	private List<String> actors; // its contains actors of film witch user selected
+	private List<String> genres;
+	private List<String> directors;
+	private List<String> studious;
 	private String description;
+public Film(User user,Film[] user_film,Film[] sourse_film) {
+	setDependencies(user);
+/*need add more comparator */
+}
+	// its example , if we need we can add very most dependencies like a director or
+	// some an actors
+	public void setDependencies(User data) {
+		if (data.getAge() < 12) {
+			genres.add("family film");
+			genres.add("fantasy");
+			genres.add("cartoon");
+		} else if (data.getAge() < 12 && data.getAge() > 18) {
+			genres.add("fantasy");
+			genres.add("serial");
+			genres.add("Comedy");
+		} else if (data.getAge() < 18 && data.getAge() > 25) {
+			genres.add("Comedy");
+			genres.add("Action");
+			genres.add("Adventure");
+		} else {
+			genres.add("Biographical");
+			genres.add("Documentary");
+			genres.add("Historical");
+		}
+		if (data.isSex()) {
+			genres.add("Crime & Gangster Films");
+			genres.add("Horror");
+			genres.add("War");
+			genres.add("Westerns");
+			genres.add("Superhero");
+		} else {
+			genres.add("Melodramas");
+			genres.add("Epics");
+			genres.add("Drama");
+			genres.add("Adventure");
+			genres.add("Romance");
+		}
+	}
 
 	public String getDescription() {
 		return description;
@@ -19,7 +59,7 @@ public class Film {
 		this.description = description;
 	}
 
-	public String[] getActors() {
+	public List<String> getActors() {
 		return actors;
 	}
 
@@ -31,7 +71,7 @@ public class Film {
 		this.IMDB = iMDB;
 	}
 
-	public void setActors(String[] actors) {
+	public void setActors(List<String> actors) {
 		this.actors = actors;
 	}
 
@@ -72,6 +112,7 @@ public class Film {
 				}
 			}
 		}
+		
 	}
 
 	public static void calcStudioPoint(Film user_film, Film next_film) {
@@ -84,29 +125,21 @@ public class Film {
 		}
 	}
 
-	public static float calcRDF(Film user_film, Film next_film) {// relevance description films
+	public static int calcRDF(Film user_film, Film next_film) {// relevance description films
 		int count_same_words = 0;
-		float percent_similarity = 0;
-		Map<String, Integer> user_film1 = new HashMap<>();// frequency of user film
-		Map<String, Integer> next_film1 = new HashMap<>();
-		user_film1.putAll(user_film.frequencyWords());
-		next_film1.putAll(next_film.frequencyWords());
-		for (Map.Entry<String, Integer> step_user : user_film1.entrySet()) {
-			for (Map.Entry<String, Integer> step_next : next_film1.entrySet()) {
-				if (step_user.getKey().equals(step_next.getKey())) {
+		for (Map.Entry<String, Integer> step_user : user_film.frequencyWords().entrySet())
+			for (Map.Entry<String, Integer> step_next : next_film.frequencyWords().entrySet())
+				if (step_user.getKey().equals(step_next.getKey()))
 					count_same_words++;
-					percent_similarity += step_next.getValue() / step_user.getValue();
-				}
-			}
-		}
-
-		return 1/(percent_similarity / count_same_words);
+		System.out.println(user_film.frequencyWords());
+		System.out.println(next_film.frequencyWords());
+		return count_same_words*2;
 	}
 
 	// Finds frequency words in line need add **if freq>3 stop adding
 	private Map<String, Integer> frequencyWords() {
 		Map<String, Integer> frequency = new HashMap<>();
-		String s = description.replaceAll("[,.?:;\"!]", "").toLowerCase(); // canonization 
+		String s = description.replaceAll("[,.?:;\"!]", "").toLowerCase(); // canonization
 		String[] words = s.split(" ");
 
 		for (int i = 0; i < words.length; i++) {
@@ -118,8 +151,13 @@ public class Film {
 				}
 			}
 		}
-		return frequency;
+		Map<String, Integer> frequency1 = new HashMap<>();
+		for(Map.Entry<String, Integer> step_user : frequency.entrySet())
+		if(frequency.get(step_user.getKey())>2) {
+			frequency1.put(step_user.getKey(), step_user.getValue());
+		}
+		return frequency1;
 	}
-	
+
 
 }
