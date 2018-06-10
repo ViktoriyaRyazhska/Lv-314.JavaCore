@@ -1,0 +1,3 @@
+Number of lines is 12
+Biggest line is "сто перемог у ста битвах — це не вершина переваги. Підкорити армію ворога не доводячи до" | It length is 88
+Vitaliy. 30.09
