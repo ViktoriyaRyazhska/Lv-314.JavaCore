@@ -7,24 +7,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-								// NOT READY YET
+
 public class MainTask4 {
-/*Create file1.txt file with a text about your career.
-Read context from file into array of strings. Each array item contains one line from file.
-Write in to the file2.txt
-   1) number of lines in file1.txt.
-   2) the longest line in file1.txt.
-   3) your name and birthday date. 
-*/
 	public static void main(String[] args) throws IOException {
-		BufferedReader read = new BufferedReader(new FileReader("info.txt"));
+		BufferedReader read = new BufferedReader(new FileReader("C:\\Users\\петро\\eclipse-workspace\\Tasks Java\\Hw\\src\\L10Home\\info.txt"));
 		List<String> list_of_linestring = new ArrayList<>();
-		while (read.ready()) { 
+		while (read.ready()) {
 			list_of_linestring.add(read.readLine());
 		}
 		read.close();
-		BufferedWriter bw = new BufferedWriter(new FileWriter("fInfo.txt"));
-		bw.write("");
+		list_of_linestring.sort((s1, s2) -> s1.length() - s2.length());
+		BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\петро\\eclipse-workspace\\Tasks Java\\Hw\\src\\L10Home\\fInfo.txt"));
+		bw.write(list_of_linestring.size()+"\n" + list_of_linestring.get(list_of_linestring.size() - 1)+"\n" + "I.Petro 1983");
 		bw.close();
 	}
 
