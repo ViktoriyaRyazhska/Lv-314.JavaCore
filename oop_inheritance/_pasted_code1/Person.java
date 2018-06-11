@@ -22,4 +22,9 @@ public abstract class Person {
 
 	abstract void print();
 
+	public void salary() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

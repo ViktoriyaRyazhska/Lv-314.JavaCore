@@ -8,7 +8,7 @@ public class Dogs implements Animal {
 	}
 
 	@Override
-	public String feel() {
+	public String feed() {
 		return "meat";
 	}
 }

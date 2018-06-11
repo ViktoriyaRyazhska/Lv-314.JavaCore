@@ -19,4 +19,8 @@ public class Student extends Person {
 		super();
 		System.out.println(Student.TYPE_PERSON);
 	}
+	@Override
+	public void salary() {
+		System.out.println("Cleaner's  salary 300");
+}
 }

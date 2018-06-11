@@ -8,7 +8,8 @@ public class Cats implements Animal {
 	}
 
 	@Override
-	public String feel() {
+	public String feed() {
+		// TODO Auto-generated method stub
 		return "milk";
 	}
 }

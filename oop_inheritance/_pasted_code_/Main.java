@@ -10,6 +10,7 @@ public class Main {
 
 		for (int i = 0; i < ol.length; i++) {
 			System.out.println(ol[i].voice());
+			System.out.println(ol[i].feed());
 		}
 
 	}

@@ -8,9 +8,13 @@ public abstract class Staff extends Person {
 	}
 
 	 abstract public void salary();
+	 
+	 public Staff () {
+		 
+	 }
 		
 	 public Staff (String name) {
-		   super();
-		   Person.name = name ;
+		   super(name);
+		   
 	   }
 }
