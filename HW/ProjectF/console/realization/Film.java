@@ -1,5 +1,6 @@
 package console.realization;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,18 +8,45 @@ import java.util.Map;
 public class Film {
 	private float general_Point = 0;
 	private float IMDB = 1;
-	private List<String> actors; // its contains actors of film witch user selected
+	private String name_of_Film;
+	private List<String> actors=new ArrayList<String>(); // its contains actors of film witch user selected
 	private List<String> genres;
 	private List<String> directors;
 	private List<String> studious;
 	private String description;
-public Film(User user,Film[] user_film,Film[] sourse_film) {
-	setDependencies(user);
-/*need add more comparator */
-}
+
+	public Film(String name_of_Film,float iMDB, List<String> actors, List<String> genres, List<String> directors, List<String> studious,
+			String description) {
+		super();
+		IMDB = iMDB;
+		this.actors = actors;
+		this.genres = genres;
+		this.directors = directors;
+		this.studious = studious;
+		this.description = description;
+		this.name_of_Film=name_of_Film;
+	}
+
+	public static void startCompare(List<Film> user_film, List<Film> sourse_film) {
+	//	setDependencies(user);
+		for (int i = 0; i < user_film.size(); i++) {
+			for (int j = 0; j < sourse_film.size(); j++) {
+				calcActorPoint(user_film.get(i), sourse_film.get(j));
+				calcDirectorPoint(user_film.get(i), sourse_film.get(j));
+				calcGenrePoint(user_film.get(i), sourse_film.get(j));
+				calcStudioPoint(user_film.get(i), sourse_film.get(j));
+				calcRDF(user_film.get(i), sourse_film.get(j));
+			}
+		}
+		for(int i=0;i<sourse_film.size();i++)
+			addImdbPoint(sourse_film.get(i));
+		
+		
+	}
+
 	// its example , if we need we can add very most dependencies like a director or
 	// some an actors
-	public void setDependencies(User data) {
+/*	public   void setDependencies(User data) {
 		if (data.getAge() < 12) {
 			genres.add("family film");
 			genres.add("fantasy");
@@ -49,7 +77,7 @@ public Film(User user,Film[] user_film,Film[] sourse_film) {
 			genres.add("Adventure");
 			genres.add("Romance");
 		}
-	}
+	}*/
 
 	public String getDescription() {
 		return description;
@@ -71,8 +99,8 @@ public Film(User user,Film[] user_film,Film[] sourse_film) {
 		this.IMDB = iMDB;
 	}
 
-	public void setActors(List<String> actors) {
-		this.actors = actors;
+	public void setActors(String name_actors) {
+		this.actors.add(name_actors);
 	}
 
 	public float getGeneral_Point() {
@@ -112,7 +140,7 @@ public Film(User user,Film[] user_film,Film[] sourse_film) {
 				}
 			}
 		}
-		
+
 	}
 
 	public static void calcStudioPoint(Film user_film, Film next_film) {
@@ -133,7 +161,7 @@ public Film(User user,Film[] user_film,Film[] sourse_film) {
 					count_same_words++;
 		System.out.println(user_film.frequencyWords());
 		System.out.println(next_film.frequencyWords());
-		return count_same_words*2;
+		return count_same_words * 2;
 	}
 
 	// Finds frequency words in line need add **if freq>3 stop adding
@@ -152,12 +180,17 @@ public Film(User user,Film[] user_film,Film[] sourse_film) {
 			}
 		}
 		Map<String, Integer> frequency1 = new HashMap<>();
-		for(Map.Entry<String, Integer> step_user : frequency.entrySet())
-		if(frequency.get(step_user.getKey())>2) {
-			frequency1.put(step_user.getKey(), step_user.getValue());
-		}
+		for (Map.Entry<String, Integer> step_user : frequency.entrySet())
+			if (frequency.get(step_user.getKey()) > 2) {
+				frequency1.put(step_user.getKey(), step_user.getValue());
+			}
 		return frequency1;
 	}
 
+	@Override
+	public String toString() {
+		return name_of_Film+" \ngeneral_Point=" + general_Point + "\nIMDB=" + IMDB + "\nactors=" + actors + "\ngenres=" + genres
+				+ "\ndirectors=" + directors + "\nstudious=" + studious + "\ndescription=" + description + "\n\n\n";
+	}
 
 }
