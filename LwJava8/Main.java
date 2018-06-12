@@ -36,7 +36,6 @@ public class Main {
 		System.out.println(localDate.with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY)));
 
 		List<String> StringList = Arrays.asList("Beta", "Gamma", "Alpha");
-		StringList.stream().sorted().collect(Collectors.toList());
 		
 		Main.printList(StringList.stream().sorted().collect(Collectors.toList()));
 
