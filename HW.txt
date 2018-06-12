@@ -1,14 +1,14 @@
-                     HW1  HW3   HW4   HW5   HW6    HW7     HW8    HW9
-                         Class if... loops  OOP  Collect  String Except  
-Dmytro Malakhov       +    +     +     +      +     +       +           
-Oleh Fedynchuk        +    +     +            
-Stanislav Zhuravel'        +     +            +     +       +       
-Vitalii Dzen'         +    +     +     +      +     +       +      +             
-Taras Luchak          +    +     +     +      +     +       +      +     
+                     HW1  HW3   HW4   HW5   HW6    HW7     HW8    HW9     HW10
+                         Class if... loops  OOP  Collect  String Except Thread,IO  
+Dmytro Malakhov       +    +     +     +      +     +       +      +           
+Oleh Fedynchuk        +    +     +     +            
+Stanislav Zhuravel'        +     +            +     +       +      .       
+Vitalii Dzen'         +    +     +     +      +     +       +      +        +             
+Taras Luchak          +    +     +     +      +     +       +      +        +     
 Yurii Tereshko        +    
 Yaroslav Schurko           
 Vytalyi Chubryn       +          +           
-Petro Il'kiv          +    +     +     +      +     +       +      +               
+Petro Il'kiv          +    +     +     +      +     +       +      +        +               
 Bohdan Bondar         +    +     +     +      +     +       +      .  
 Pavel Kolominov       +    +                  .
 Oleg Kovaliuk 	      +   
