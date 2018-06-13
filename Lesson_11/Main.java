@@ -45,7 +45,7 @@ public class Main {
 		list_2.forEach(x->RandomStringUtils.randomAlphabetic(10));	
 		//System.out.println(list_2.size());
 
-													// Не виходить
+									// Так не виходить
 		
 		list_2.sort((c1,c2) -> c1.compareTo(c2));
 		list_2.forEach(System.out::println);
