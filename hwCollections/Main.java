@@ -1,7 +1,6 @@
 package hwCollections;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -17,27 +16,22 @@ public class Main {
 	}
 
 	public static Set<Integer> intersection(Set<Integer> set1, Set<Integer> set2) {
-		Set<Integer> unionSet = new TreeSet();
-		for (Integer valueSet1 : set1) {
-			if (set2.contains(valueSet1)) {
-				unionSet.add(valueSet1);
-			}
-		}
-		return unionSet;
+	
+		Set<Integer> intersectionSet = new TreeSet();
+		intersectionSet.addAll(set1);
+		intersectionSet.retainAll(set2);
+		return intersectionSet;
+
 	}
 
 	public static Set<Integer> union(Set<Integer> set1, Set<Integer> set2) {
-		Set<Integer> intersectionSet = new TreeSet();
+		Set<Integer> unionSet = new TreeSet();
 
-		for (Integer intValue : set2) {
-			intersectionSet.add(intValue);
+		unionSet.addAll(set1);
 
-		}
-		for (Integer intValue : set1) {
-			intersectionSet.add(intValue);
+		unionSet.addAll(set2);
 
-		}
-		return intersectionSet;
+		return unionSet;
 	}
 
 	public static void main(String[] arg) {
@@ -51,10 +45,13 @@ public class Main {
 		set2.add(76);
 		set2.add(45);
 		set2.add(41);
-
+        System.out.println("set1 :");
 		Main.printSet(set1);
+		System.out.println("set2 :");
 		Main.printSet(set2);
+		System.out.println("intersection of sets :");
 		Main.printSet(Main.intersection(set1, set2));
+		System.out.println("union of sets :");
 		Main.printSet(Main.union(set1, set2));
 		Map<String, String> personMap = new TreeMap();
 
@@ -81,21 +78,21 @@ public class Main {
 		studentList.add(new Student("Vyacheslav", 5));
 		studentList.sort(Student.getCourseComparator());
 
-		/*
-		 * for( Iterator<Student> iter=studentList.iterator();iter.hasNext();){
-		 * System.out.println(iter.next().getName()+" "+iter.next().getCourse() );
-		 * 
-		 * }
-		 */
+		
+		/*  for( Iterator<Student> iter=studentList.iterator();iter.hasNext();){
+		  System.out.println(iter.next().getName()+" "+iter.next().getCourse() );
+		  
+		  }*/
+		 
 
 		for (Student stud : studentList) {
 			System.out.println(stud.getName() + " " + stud.getCourse());
 
 		}
-		
+
 		studentList.sort(Student.getNameCompararor());
 		System.out.println();
-		
+
 		for (Student stud : studentList) {
 			System.out.println(stud.getName() + " " + stud.getCourse());
 
