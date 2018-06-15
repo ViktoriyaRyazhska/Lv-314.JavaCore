@@ -10,14 +10,10 @@ public class Main {
 		
 	String str="Here      is 					 a sentence   with lots   spaces  			 inside";
 	
-	StringBuffer sb = new StringBuffer();
 	Pattern p = Pattern.compile("[\\s]+");
 	Matcher match =p.matcher(str);
-	while(match.find()) {
-		match.appendReplacement(sb, " ");
-	}
-	match.appendTail(sb);
-	System.out.println(sb.toString());
+	
+	System.out.println(match.replaceAll(" "));
 	//--------------------------------------
 	String sentence;
 	Scanner scn =new Scanner(System.in);
