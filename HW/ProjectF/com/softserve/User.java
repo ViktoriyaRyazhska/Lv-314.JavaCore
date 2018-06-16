@@ -41,7 +41,6 @@ public class User {
 	}
 
 	public void pickGoodFilms() {
-		System.out.println("Getting films what you like..");
 		likeFilms.add(Source.getFilms().get(0));
 		Source.getFilms().remove(0);
 	}
@@ -55,7 +54,7 @@ public class User {
 	public void info() {
 		if (age < 12) {
 			for (int i = 0; i < likeFilms.size(); i++) {
-				likeFilms.get(i).addGenres(Arrays.asList("family film", "fantasy", "cartoon"));
+				likeFilms.get(i).addGenres(Arrays.asList("Family", "fantasy", "cartoon"));
 			}
 		} else if (age > 12 && age < 18) {
 			for (int i = 0; i < likeFilms.size(); i++) {

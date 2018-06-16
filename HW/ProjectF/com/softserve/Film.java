@@ -8,8 +8,8 @@ import java.util.Map;
 public class Film {
 	private int position = 0;
 	private int raiting = 1;
-	private String filmName;
-	private List<String> actors;
+	private String tittle;
+	private List<String> stars;
 	private List<String> genres;
 	private List<String> directors;
 	private List<String> studious;
@@ -17,9 +17,9 @@ public class Film {
 
 	public Film(String filmName, int raiting, List<String> actors, List<String> genres, List<String> directors,
 			List<String> studious, String description) {
-		this.filmName = filmName;
-		this.position += raiting;
-		this.actors = actors;
+		this.tittle = filmName;
+		this.position += raiting-40;
+		this.stars = actors;
 		this.genres = genres;
 		this.directors = directors;
 		this.studious = studious;
@@ -36,7 +36,7 @@ public class Film {
 	}
 
 	public List<String> getActors() {
-		return actors;
+		return stars;
 	}
 
 	public int getFilmRank() {
@@ -56,11 +56,11 @@ public class Film {
 	}
 
 	public String getFilmName() {
-		return filmName;
+		return tittle;
 	}
 
 	public void setFilmName(String filmName) {
-		this.filmName = filmName;
+		this.tittle = filmName;
 	}
 
 	public List<String> getGenres() {
@@ -95,7 +95,7 @@ public class Film {
 	}
 
 	public void setActors(List<String> actors) {
-		this.actors = actors;
+		this.stars = actors;
 	}
 
 	public float getRait() {
@@ -107,7 +107,7 @@ public class Film {
 	}
 
 	public void setActors(String name_actors) {
-		this.actors.add(name_actors);
+		this.stars.add(name_actors);
 	}
 
 	public float getGeneral_Point() {
@@ -117,8 +117,8 @@ public class Film {
 	private static void calcActorPoint(User user) {
 		for (int i = 0; i < user.getLikeFilms().size(); i++) {
 			for (int j = 0; j < Source.getFilms().size(); j++) {
-				for (String userVar : user.getLikeFilms().get(i).actors) {
-					for (String sourseVar : Source.getFilms().get(j).actors) {
+				for (String userVar : user.getLikeFilms().get(i).stars) {
+					for (String sourseVar : Source.getFilms().get(j).stars) {
 						if (userVar.equals(sourseVar)) {
 							Source.getFilms().get(j).position++;
 						}
@@ -214,13 +214,11 @@ public class Film {
 		calcStudioPoint(user);
 		calcRDF(user);
 		Source.getFilms().sort((a, b) -> b.position - a.position);
-
 	}
 
 	@Override
 	public String toString() {
-
-		return filmName + " \ngeneral_Point=" + position;
+		return tittle + " \ngeneral_Point=" + position;
 	}
 
 }

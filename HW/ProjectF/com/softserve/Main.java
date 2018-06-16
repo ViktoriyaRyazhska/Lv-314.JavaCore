@@ -10,12 +10,10 @@ public class Main {
 
 	public static void runFilmFinder(User user) {
 		Source.base(); // create  base of films
-		System.out.println("User pick...");
 		user.pickGoodFilms();
 		user.info();
 		user.getLikeFilms().forEach(System.out::println);
 		Film.pickUpFilms(user);// compare
-		System.out.println("After compare sourse is...");
 		Source.getFilms().forEach(System.out::println);
 
 	}
