@@ -1,11 +1,13 @@
 ***************************************************
-Algorithm search  similar films
+Algorithm search the most suitable movies
 *****
-What need doing
-1) add dependencies 
-2)add films in database
-3)short code
-4)make order with the code
-5)rename variable and name methods 
-6)check what is spring and how i can use its
-7)balance filmRank
+What need doing:{
+add films in MovieBase
+check what is spring and how i can use its
+balance filmRank
+add simple interface dialog for user
+Parse films 
+dislike film connect
+Can add only three main actors,genre 
+Format all data on the standard text
+}

@@ -1,11 +1,12 @@
 package com.softserve;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Film {
-	private int filmRank = 0;
+	private int position = 0;
 	private int raiting = 1;
 	private String filmName;
 	private List<String> actors;
@@ -16,52 +17,15 @@ public class Film {
 
 	public Film(String filmName, int raiting, List<String> actors, List<String> genres, List<String> directors,
 			List<String> studious, String description) {
-		this.raiting = raiting;
+		this.filmName = filmName;
+		this.position += raiting;
 		this.actors = actors;
 		this.genres = genres;
 		this.directors = directors;
 		this.studious = studious;
 		this.description = description;
-		this.filmName = filmName;
-	}
-
-	public static void pickUpMovies() {
-		// setDependencies(user);
-		MovieBase.fillTheBase();
-		User.addLikesFilms();
-		
-		
-		for (int i = 0; i < User.getLikeFilms().size(); i++) {
-			for (int j = 0; j < MovieBase.getSourse().size(); j++) {
-				calcActorPoint(User.getLikeFilms().get(i), MovieBase.getSourse().get(j));
-				calcDirectorPoint(User.getLikeFilms().get(i), MovieBase.getSourse().get(j));
-				calcGenrePoint(User.getLikeFilms().get(i), MovieBase.getSourse().get(j));
-				calcStudioPoint(User.getLikeFilms().get(i), MovieBase.getSourse().get(j));
-				calcRDF(User.getLikeFilms().get(i), MovieBase.getSourse().get(j));
-
-			}
-		}
-		for (int i = 0; i < MovieBase.getSourse().size(); i++)
-			addImdbPoint(MovieBase.getSourse().get(i));
-		MovieBase.getSourse().sort((a, b) -> b.filmRank - a.filmRank);
-		MovieBase.getSourse().forEach(System.out::println);
 
 	}
-
-	
-	/*
-	 * public void setDependencies(User data) { if (data.getAge() < 12) {
-	 * genres.add("family film"); genres.add("fantasy"); genres.add("cartoon"); }
-	 * else if (data.getAge() < 12 && data.getAge() > 18) { genres.add("fantasy");
-	 * genres.add("serial"); genres.add("Comedy"); } else if (data.getAge() < 18 &&
-	 * data.getAge() > 25) { genres.add("Comedy"); genres.add("Action");
-	 * genres.add("Adventure"); } else { genres.add("Biographical");
-	 * genres.add("Documentary"); genres.add("Historical"); } if (data.isSex()) {
-	 * genres.add("Crime & Gangster Films"); genres.add("Horror");
-	 * genres.add("War"); genres.add("Westerns"); genres.add("Superhero"); } else {
-	 * genres.add("Melodramas"); genres.add("Epics"); genres.add("Drama");
-	 * genres.add("Adventure"); genres.add("Romance"); } }
-	 */
 
 	public String getDescription() {
 		return description;
@@ -75,12 +39,71 @@ public class Film {
 		return actors;
 	}
 
-	public float getIMDB() {
+	public int getFilmRank() {
+		return position;
+	}
+
+	public void setFilmRank(int filmRank) {
+		this.position = filmRank;
+	}
+
+	public int getRaiting() {
 		return raiting;
 	}
 
-	public void setIMDB(int iMDB) {
-		this.raiting = iMDB;
+	public void setRaiting(int raiting) {
+		this.raiting = raiting;
+	}
+
+	public String getFilmName() {
+		return filmName;
+	}
+
+	public void setFilmName(String filmName) {
+		this.filmName = filmName;
+	}
+
+	public List<String> getGenres() {
+		return genres;
+	}
+
+	public void setGenres(List<String> genres) {
+		this.genres = genres;
+	}
+
+	public void addGenres(List<String> depend) {
+		List<String> union = new ArrayList<String>();
+		union.addAll(this.genres);
+		union.addAll(depend);
+		this.genres = union;
+	}
+
+	public List<String> getDirectors() {
+		return directors;
+	}
+
+	public void setDirectors(List<String> directors) {
+		this.directors = directors;
+	}
+
+	public List<String> getStudious() {
+		return studious;
+	}
+
+	public void setStudious(List<String> studious) {
+		this.studious = studious;
+	}
+
+	public void setActors(List<String> actors) {
+		this.actors = actors;
+	}
+
+	public float getRait() {
+		return raiting;
+	}
+
+	public void setRait(int rait) {
+		this.raiting = rait;
 	}
 
 	public void setActors(String name_actors) {
@@ -88,65 +111,79 @@ public class Film {
 	}
 
 	public float getGeneral_Point() {
-		return filmRank;
+		return position;
 	}
 
-	/* This method find same actors in two films */
-	private static void calcActorPoint(Film user_film, Film next_film) {
-		for (String actors_User : user_film.actors) {
-			for (String actors_next : next_film.actors) {
-				if (actors_User.equals(actors_next)) {
-					next_film.filmRank += 0.5;
+	private static void calcActorPoint(User user) {
+		for (int i = 0; i < user.getLikeFilms().size(); i++) {
+			for (int j = 0; j < Source.getFilms().size(); j++) {
+				for (String userVar : user.getLikeFilms().get(i).actors) {
+					for (String sourseVar : Source.getFilms().get(j).actors) {
+						if (userVar.equals(sourseVar)) {
+							Source.getFilms().get(j).position++;
+						}
+					}
 				}
 			}
 		}
 	}
 
-	private static void addImdbPoint(Film next_film) {
-		next_film.filmRank += next_film.raiting;
-	}
-
-	private static void calcGenrePoint(Film user_film, Film next_film) {
-		for (String genres_User : user_film.genres) {
-			for (String genres_next : next_film.genres) {
-				if (genres_User.equals(genres_next)) {
-					next_film.filmRank++;
+	private static void calcGenrePoint(User user) {
+		for (int i = 0; i < user.getLikeFilms().size(); i++) {
+			for (int j = 0; j < Source.getFilms().size(); j++) {
+				for (String userVar : user.getLikeFilms().get(i).genres) {
+					for (String sourseVar : Source.getFilms().get(j).genres) {
+						if (userVar.equals(sourseVar)) {
+							Source.getFilms().get(j).position++;
+						}
+					}
 				}
 			}
 		}
 	}
 
-	private static void calcDirectorPoint(Film user_film, Film next_film) {
-		for (String director_User : user_film.directors) {
-			for (String director_next : next_film.directors) {
-				if (director_User.equals(director_next)) {
-					next_film.filmRank++;
-				}
-			}
-		}
-
-	}
-
-	private static void calcStudioPoint(Film user_film, Film next_film) {
-		for (String studio_User : user_film.studious) {
-			for (String studio_next : next_film.studious) {
-				if (studio_User.equals(studio_next)) {
-					next_film.filmRank++;
+	private static void calcDirectorPoint(User user) {
+		for (int i = 0; i < user.getLikeFilms().size(); i++) {
+			for (int j = 0; j < Source.getFilms().size(); j++) {
+				for (String userVar : user.getLikeFilms().get(i).directors) {
+					for (String sourseVar : Source.getFilms().get(j).directors) {
+						if (userVar.equals(sourseVar)) {
+							Source.getFilms().get(j).position++;
+						}
+					}
 				}
 			}
 		}
 	}
 
-	private static void calcRDF(Film user_film, Film next_film) {// relevance description films
+	private static void calcStudioPoint(User user) {
+		for (int i = 0; i < user.getLikeFilms().size(); i++) {
+			for (int j = 0; j < Source.getFilms().size(); j++) {
+				for (String userVar : user.getLikeFilms().get(i).studious) {
+					for (String sourseVar : Source.getFilms().get(j).studious) {
+						if (userVar.equals(sourseVar)) {
+							Source.getFilms().get(j).position++;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private static void calcRDF(User user) {
 		int count_same_words = 0;
-		for (Map.Entry<String, Integer> step_user : user_film.frequencyWords().entrySet())
-			for (Map.Entry<String, Integer> step_next : next_film.frequencyWords().entrySet())
-				if (step_user.getKey().equals(step_next.getKey()))
-					count_same_words++;
-		next_film.filmRank += count_same_words * 2;
+		for (int i = 0; i < user.getLikeFilms().size(); i++) {
+			for (int j = 0; j < Source.getFilms().size(); j++) {
+				for (Map.Entry<String, Integer> step_user : user.getLikeFilms().get(i).frequencyWords().entrySet())
+					for (Map.Entry<String, Integer> step_next : Source.getFilms().get(j).frequencyWords().entrySet())
+						if (step_user.getKey().equals(step_next.getKey()))
+							count_same_words++;
+				Source.getFilms().get(j).position += count_same_words * 2;
+			}
+		}
 	}
 
-	// Finds frequency words in line need add **if freq>3 stop adding
+	// Finds frequency words in line
 	private Map<String, Integer> frequencyWords() {
 		Map<String, Integer> frequency = new HashMap<>();
 		String s = description.replaceAll("[,.?:;\"!]", "").toLowerCase(); // canonization
@@ -169,10 +206,21 @@ public class Film {
 		return frequency1;
 	}
 
+	// compare all films and assigns each movie
+	public static void pickUpFilms(User user) {
+		calcActorPoint(user);
+		calcDirectorPoint(user);
+		calcGenrePoint(user);
+		calcStudioPoint(user);
+		calcRDF(user);
+		Source.getFilms().sort((a, b) -> b.position - a.position);
+
+	}
+
 	@Override
 	public String toString() {
 
-		return filmName + " \ngeneral_Point=" + filmRank;
+		return filmName + " \ngeneral_Point=" + position;
 	}
 
 }
