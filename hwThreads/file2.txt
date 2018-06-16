@@ -1,0 +1,1 @@
+Number of lines in file1 : 31 The longest line is : Major Field of Study: Production of Electronic and Electric Means of Automation First and Last Name:	Stanislav Zhuravel Date of birth:	December, 30th 1995	

@@ -1,0 +1,31 @@
+
+Personal Information: 
+First and Last Name:	Stanislav Zhuravel
+Home Address:	4B Lukasha st., Lviv 79013, Ukraine
+cell phone +380937759396	
+E-mail address:	ZhuravelStas@gmail.com
+Date of birth:	December, 30th 1995	
+Nationality:	Ukrainian	
+Education:
+2015 – till present
+2011-2015
+2001-2011
+Student, 3rd year of study
+National University ”Lviv Polytehnic”
+Major Field of Study: Telecommunications
+Expected Graduation Date: June 2019
+Konotop Polytechnic School
+Major Field of Study: Production of Electronic and Electric Means of Automation
+Konotop School No. 5
+Hobbies and interests:	Gym, collecting coins, drawing
+Skills/Qualifications:
+English level:	English – Intermidiate		
+ Skills:	C/C++
+basics of circuit technology
+basics of SQL
+familiar with CSS,XML
+familiar with Java 
+
+
+
+
