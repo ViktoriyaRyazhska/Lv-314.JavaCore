@@ -1,14 +1,10 @@
-package practic;
+package ten;
 
-public class Car{
+public class tyty {
 
 	public static void main(String[] args) {
-	    
 		
-		
-	}
 
-	
 	}
 
 }
