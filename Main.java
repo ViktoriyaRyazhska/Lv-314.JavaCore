@@ -1,7 +1,9 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import task1.Calc;
+import task1.Multiples;
 
 public class Main {
 	public static void main(String[] arg) throws NumberFormatException, IOException {
@@ -35,7 +37,8 @@ public class Main {
 			Task6.task6(br.readLine());
 			break;
 		case 7:
-			;
+		   	  System.out.println("Input number");
+	    	  Calc.calculate(Integer.parseInt( br.readLine())) ;
 			break;
 		case 8:
 			;
@@ -43,7 +46,6 @@ public class Main {
 		case 9:
 			System.out.println("Input number 'n'");
 			RandomTask.randome(Integer.parseInt(br.readLine()));
-			;
 			break;
 		case 10:
 			;
@@ -52,7 +54,7 @@ public class Main {
 			;
 			break;
 		case 12:
-			;
+			Multiples.multip();
 			break;
 		default:
 			;
