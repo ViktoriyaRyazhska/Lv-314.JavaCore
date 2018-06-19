@@ -10,5 +10,5 @@ Yaroslav Schurko      +    +                  +
 Vytalyi Chubryn       +          +           
 Petro Il'kiv          +    +     +     +      +     +       +      +        +        +               
 Bohdan Bondar         +    +     +     +      +     +       +      +                 +  
-Pavel Kolominov       +    +                  .
+Pavel Kolominov       +    +     +            .
 Oleg Kovaliuk 	      +   
