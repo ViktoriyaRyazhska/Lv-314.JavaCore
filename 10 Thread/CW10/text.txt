@@ -1,0 +1,7 @@
+Hello, here is some text without a meaning. This text should show, how a printed text will look like
+at this place. If you read this text, you will get no information. Really? Is there no information? Is
+there a difference between this text and some nonsense like Huardest gefburn? Kjift – Never mind!
+A blind text like this gives you information about the selected font, how the letters are written and the
+impression of the look. This text should contain all letters of the alphabet and it should be written in of
+the original language. There is no need for a special contents, but the length of words should match to
+the language. 
