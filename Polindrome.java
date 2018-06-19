@@ -1,5 +1,3 @@
-package task1;
-
 public class Polindrome {
 	public static void polindrome(String str) {
 		StringBuffer strBuf = new StringBuffer(str);

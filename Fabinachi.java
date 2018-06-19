@@ -1,5 +1,3 @@
-package task1;
-
 public class Fabinachi {
 	public static void  fabinachi(int amount ) {
 		int fabOne=0;

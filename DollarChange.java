@@ -1,5 +1,3 @@
-package task1;
-
 public class DollarChange {
 	public static void changeDollar(int dollarCost, int gryvnaAmount) {
 		//System.out.println((double) gryvnaAmount/dollarCost);
