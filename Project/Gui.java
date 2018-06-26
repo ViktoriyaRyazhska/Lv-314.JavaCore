@@ -10,8 +10,6 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -27,6 +25,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -48,6 +47,8 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Gui {
 
@@ -159,6 +160,7 @@ public class Gui {
 		Icon icon_save = new ImageIcon("src/foto/save.png");
 		Icon icon_copy = new ImageIcon("src/foto/copy.png");
 		Icon icon_paste = new ImageIcon("src/foto/paste.png");
+		Icon icon_save_img = new ImageIcon("src/foto/save_img.png");
 		JButton button_encrypt = new JButton(icon_encrypt);
 		JButton button_decrypt = new JButton(icon_decrypt);
 		JButton button_red_arrow_R = new JButton(icon_red_arrow_R);
@@ -166,6 +168,7 @@ public class Gui {
 		JButton button_clean = new JButton(icon_clean);
 		JButton button_open = new JButton(icon_open);
 		JButton button_save = new JButton(icon_save);
+		JButton button_save_file = new JButton(icon_save_img);
 		JButton copy_area_L = new JButton(icon_copy);
 		JButton copy_area_R = new JButton(icon_copy);
 		JButton paste_area_L = new JButton(icon_paste);
@@ -177,6 +180,7 @@ public class Gui {
 		button_clean.setBounds(510, 610, 70, 71);
 		button_open.setBounds(25, 7, 56, 55);
 		button_save.setBounds(1010, 7, 55, 55);
+		button_save_file.setBounds(940, 7, 55, 55);
 		use_cript_setting.setBounds(475, 30, 150, 15);
 		copy_area_L.setBounds(230, 4, 57, 62);
 		copy_area_R.setBounds(750, 4, 57, 62);
@@ -214,6 +218,12 @@ public class Gui {
 				save_file(area_R.getText());
 			}
 		});
+		
+		button_save_file.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ReadFiles.saveImg(area_R.getText());
+			}
+		});
 
 		copy_area_L.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -235,7 +245,6 @@ public class Gui {
 
 		paste_area_L.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// area_L.setText("");
 				try {
 					area_L.setText(
 							(String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor));
@@ -257,6 +266,7 @@ public class Gui {
 		panel_1.add(button_clean);
 		panel_1.add(button_open);
 		panel_1.add(button_save);
+		panel_1.add(button_save_file);
 		panel_1.add(use_cript_setting);
 		panel_1.add(copy_area_L);
 		panel_1.add(copy_area_R);
@@ -285,7 +295,7 @@ public class Gui {
 		JScrollPane scroll_pane_RSA_Public_key_area = new JScrollPane(select_RSA_Public_key_area);
 		JScrollPane scroll_pane_RSA_Private_key_area = new JScrollPane(select_RSA_Private_key_area);
 		JCheckBox use_RSA = new JCheckBox("Use RSA");
-		
+
 		JTextArea select_AES_key_area = new JTextArea();
 		JTextArea finished_AES_key_area = new JTextArea();
 		JButton generate_AES_key_button = new JButton("Generate AES key");
@@ -399,7 +409,7 @@ public class Gui {
 		save_key_button.setEnabled(false);
 		key_button_generate.setBounds(30, 10, 200, 20);
 		key_button_select.setBounds(30, 30, 200, 20);
-		generate_key_area.setBounds(30, 160, 100, 300);			//!!!
+		generate_key_area.setBounds(30, 160, 100, 300); // !!!
 		generate_key_area.setEditable(false);
 		scroll_pane_generate_key_area.setBounds(30, 110, 100, 300);
 		select_key_label.setBounds(155, 110, 150, 30);
@@ -409,9 +419,7 @@ public class Gui {
 		select_key_label.setBackground(Color.WHITE);
 		use_keys.setBounds(140, 360, 170, 50);
 		use_keys.setEnabled(false);
-		
-		
-		
+
 		generate_RSA_key_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Cript.create_keys_RSA(true, false, false, "", "");
@@ -426,19 +434,18 @@ public class Gui {
 				info_of_RSA_Private_key_label.setForeground(Color.GREEN);
 			}
 		});
-		
+
 		select_RSA_Public_key_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StringBuilder inputData = new StringBuilder(open_file());
-				if(inputData.length()==392) {
+				if (inputData.length() == 392) {
 					Cript.create_keys_RSA(false, true, false, inputData.toString(), "");
 					select_RSA_Public_key_area.setText(Cript.getPublicKey_RSA_toString());
 					save_RSA_Public_key_button.setEnabled(true);
 					use_RSA.setEnabled(true);
 					info_of_RSA_Public_key_label.setText("Public key added");
 					info_of_RSA_Public_key_label.setForeground(Color.GREEN);
-				}
-				else {
+				} else {
 					info_of_RSA_Public_key_label.setText("Error. Wrong key");
 					info_of_RSA_Public_key_label.setForeground(Color.RED);
 					select_RSA_Public_key_area.setText("");
@@ -446,19 +453,18 @@ public class Gui {
 				}
 			}
 		});
-		
+
 		select_RSA_Private_key_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StringBuilder inputData = new StringBuilder(open_file());
-				if(inputData.length()==1624) {
+				if (inputData.length() == 1624) {
 					Cript.create_keys_RSA(false, false, true, "", inputData.toString());
 					select_RSA_Private_key_area.setText(Cript.getPrivateKey_RSA_toString());
 					save_RSA_Private_key_button.setEnabled(true);
 					use_RSA.setEnabled(true);
 					info_of_RSA_Private_key_label.setText("Public key added");
 					info_of_RSA_Private_key_label.setForeground(Color.GREEN);
-				}
-				else {
+				} else {
 					info_of_RSA_Private_key_label.setText("Error. Wrong key");
 					info_of_RSA_Private_key_label.setForeground(Color.RED);
 					select_RSA_Private_key_area.setText("");
@@ -466,7 +472,7 @@ public class Gui {
 				}
 			}
 		});
-		
+
 		key_RSA_RadioButton_generate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				generate_RSA_key_button.setEnabled(true);
@@ -483,7 +489,7 @@ public class Gui {
 				save_RSA_Private_key_button.setEnabled(false);
 			}
 		});
-		
+
 		key_RSA_RadioButton_select.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				generate_RSA_key_button.setEnabled(false);
@@ -506,13 +512,13 @@ public class Gui {
 				save_file(Cript.getPublicKey_RSA_toString());
 			}
 		});
-		
+
 		save_RSA_Private_key_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				save_file(Cript.getPrivateKey_RSA_toString());
 			}
 		});
-		
+
 		generate_AES_key_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -698,13 +704,12 @@ public class Gui {
 		// JTextFieldLimit(key_AES_size(slider_AES.getValue())/8));
 		// }
 		// });
-		
-		
-		
-		JLabel ERROR = new JLabel("<html>При шифруванні RSA великої кількості даних - <br>"+"вибивається помилка. Ще з цим не розібрався<br></html>", SwingConstants.CENTER);
+
+		JLabel ERROR = new JLabel("<html>При шифруванні RSA великої кількості даних - <br>"
+				+ "вибивається помилка. Ще з цим не розібрався<br></html>", SwingConstants.CENTER);
 		ERROR.setBounds(650, 500, 400, 60);
 		panel_2.add(ERROR);
-		
+
 		panel_2.add(scroll_pane_generate_key_area);
 		panel_2.add(generate_key_button);
 		panel_2.add(use_keys);
@@ -743,14 +748,13 @@ public class Gui {
 		panel_2.add(scroll_pane_RSA_Public_key_area);
 		panel_2.add(scroll_pane_RSA_Private_key_area);
 		panel_2.add(use_RSA);
-		
+
 		panel_2.setSize(1100, 770);
 		panel_2.setLayout(null);
 		// panel_2.setVisible(true);
 
 		frame.setVisible(true);
-		
-		
+
 		openItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				area_L.setText(open_file());
@@ -815,20 +819,37 @@ public class Gui {
 
 	public static String open_file() /* throws Exception */ {
 		JFileChooser fileChooser = new JFileChooser();
+		FileFilter imageFilter = new FileNameExtensionFilter("Image files", ImageIO.getReaderFileSuffixes());
+		fileChooser.setFileFilter(imageFilter);
+		FileFilter txtFilter = new FileNameExtensionFilter("Text files", "txt");
+		fileChooser.setFileFilter(txtFilter);
 		StringBuilder string_builder = new StringBuilder();
 		if (fileChooser.showOpenDialog(fileChooser) == JFileChooser.APPROVE_OPTION) {
-			try {
-				FileReader file_reader = new FileReader(fileChooser.getSelectedFile());
-				Scanner scanner = new Scanner(file_reader);
-				while (scanner.hasNext()) {
-					string_builder.append(scanner.nextLine() + "\n");
+			String format3 = fileChooser.getSelectedFile().toString().substring(
+					fileChooser.getSelectedFile().toString().length() - 4,
+					fileChooser.getSelectedFile().toString().length());
+			String format4 = fileChooser.getSelectedFile().toString().substring(
+					fileChooser.getSelectedFile().toString().length() - 5,
+					fileChooser.getSelectedFile().toString().length());
+			if (format3.equals(".jpg") || format3.equals(".png") || format3.equals(".gif") || format3.equals(".ico")
+					|| format4.equals(".jpeg")) {
+				try {
+					string_builder.append(ReadFiles.readImg(fileChooser.getSelectedFile().toString()));
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
-				string_builder.delete(string_builder.length() - 1, string_builder.length());
-				file_reader.close();
-			} catch (FileNotFoundException e1) {
-				e1.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+			} else {
+				try (FileReader file_reader = new FileReader(fileChooser.getSelectedFile());) {
+					Scanner scanner = new Scanner(file_reader);
+					while (scanner.hasNext()) {
+						string_builder.append(scanner.nextLine() + "\n");
+					}
+					string_builder.delete(string_builder.length() - 1, string_builder.length());
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return string_builder.toString();
